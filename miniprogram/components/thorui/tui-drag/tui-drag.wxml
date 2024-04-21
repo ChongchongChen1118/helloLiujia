@@ -1,0 +1,7 @@
+<wxs src="./tui-drag.wxs" module="handler"></wxs>
+<view class="tui-drag__wrap" list="{{list}}" style="height:{{handler.getHeight(rows,itemHeight)}}" basedata="{{baseData}}" change:list="{{handler.listObserver}}" change:basedata="{{handler.baseDataObserver}}">
+		<view class="tui-drag__item" wx:for="{{list}}" wx:key="index" data-index="{{index}}" style="width: {{100 / columns + '%'}};height:{{itemHeight + 'rpx'}}" bindlongpress="{{handler.longPress}}" data-basedata="{{baseData}}" data-edit="{{isEdit}}" bindtouchstart="{{handler.touchStart}}"
+		 catch:touchmove="{{dragging?handler.touchMove:''}}" catch:touchend="{{dragging?handler.touchEnd:''}}">
+      <item bindclick="handleClick" index="{{index}}" entity="{{item.data}}" fixed="{{item.fixed}}" height="{{itemHeight}}" isEdit="{{isEdit}}"></item>
+		</view>
+	</view>

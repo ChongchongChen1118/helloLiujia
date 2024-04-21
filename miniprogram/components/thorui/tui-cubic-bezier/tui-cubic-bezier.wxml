@@ -1,0 +1,9 @@
+<view class="tui-cubic__bezier {{animate?'tui-animate__bezier':''}}" style="left: {{left}}; top: {{top}}; transform:{{transform_x}}" catchtap="handleClick">
+		<view
+			class="tui-badge__bezier {{animate?'tui-animate__bezier_y':''}}"
+			style="width: {{width}};height: {{height}}; border-radius: {{height}}; background-color: {{backgroundColor || g_backgroundColor}}; transform:{{transform_y}}"
+		>
+			<text wx:if="{{!custom}}">1</text>
+			<slot></slot>
+		</view>
+	</view>

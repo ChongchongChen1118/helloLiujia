@@ -1,0 +1,106 @@
+.tui-charts__funnel-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.tui-charts__funnel-vertical {
+  flex-direction: column;
+}
+
+.tui-funnel__legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tui-legend__flex-column {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 40rpx;
+}
+
+.tui-funnel__legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+
+.tui-legend__circle {
+  height: 20rpx;
+  width: 20rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+  flex-shrink: 0;
+}
+
+.tui-charts-funnel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.tui-charts__funnel-item {
+  border-left-style: solid;
+  border-left-color: transparent;
+  border-right-style: solid;
+  border-right-color: transparent;
+  position: relative;
+}
+
+.tui-funnel__asc {
+  border-bottom-style: solid;
+}
+
+.tui-funnel__desc {
+  border-top-style: solid;
+}
+
+.tui-funnel__tooltip {
+  padding: 30rpx;
+  border-radius: 12rpx;
+  background-color: rgba(0, 0, 0, .6);
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.tui-funnel__tooltip-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tui-tooltip__title {
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 30rpx;
+  flex-shrink: 0;
+}
+
+.tui-funnel__tooltip-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.tui-tooltip__val {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #fff;
+  margin-left: 6rpx;
+  white-space: nowrap;
+}
+
+.tui-tooltip__val-ml {
+  margin-left: 20rpx;
+}

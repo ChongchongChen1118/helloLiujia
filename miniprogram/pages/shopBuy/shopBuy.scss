@@ -1,0 +1,25 @@
+page{
+  background: rgb(248, 248, 248);
+}
+
+.tui-title {
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.tui-btn__box {
+	width: 100%;
+	padding: 60rpx 30rpx;
+	box-sizing: border-box;
+}
+.tui-number-box {
+  padding: 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 5rpx;
+  background: #fff;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

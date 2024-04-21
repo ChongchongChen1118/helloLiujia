@@ -1,0 +1,1 @@
+<canvas style="width:{{cv_width}}px;height:{{cv_height}}px" canvas-id="{{posterId}}" class="tui-poster__cv"></canvas>

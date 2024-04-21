@@ -1,0 +1,27 @@
+.tui-msg__box {
+	width: 100%;
+	padding-top: 100rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.tui-msg__icon{
+	padding-bottom: 44rpx;
+}
+.tui-msg__title {
+	font-weight: 700;
+	font-size: 44rpx;
+}
+
+.tui-msg__desc,
+.tui-msg__title {
+	margin-bottom: 32rpx;
+	color: #333;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.tui-msg__desc {
+	font-size: 32rpx;
+	text-align: center;
+}

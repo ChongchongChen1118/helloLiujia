@@ -1,0 +1,35 @@
+<navigator class="product" url="../../pages/productDetails/productDetails?id={{item._id}}">
+  <view class="pic">
+    <image class="image" style="height: 250rpx;" mode="aspectFill" src="{{item.picpath}}"></image>
+  </view>
+  <view class="text">
+    <view class="title">{{item.title}}</view>
+    <view class="info">
+
+      <view class="row">
+        <view class="left"><text space="emsp">货 号：</text></view>
+        <view class="right">{{item.pronum}}</view>
+      </view>
+
+      <view class="row">
+        <view class="left"><text space="emsp">等 级：</text></view>
+        <view class="right">{{item.grade}}</view>
+      </view>
+
+      <view class="row">
+        <view class="left"><text space="emsp">年 份：</text></view>
+        <view class="right">{{item.year}}</view>
+      </view>
+
+      <view class="row">
+        <view class="left">净含量：</view>
+        <view class="right">{{item.weight}}</view>
+      </view>
+
+      <view class="row">
+        <view class="left">零售价：</view>
+        <view class="right">{{item.price}} 元</view>
+      </view> 
+    </view>
+  </view>
+</navigator>

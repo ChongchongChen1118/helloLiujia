@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tui-numberbox": "../../components/thorui/tui-numberbox/tui-numberbox"
+  },
+  "navigationBarTitleText": "填写订单"
+}

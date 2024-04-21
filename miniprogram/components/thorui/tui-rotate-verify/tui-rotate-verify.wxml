@@ -1,0 +1,21 @@
+<wxs src="./tui-rotate-verify.wxs" module="parse"></wxs>
+<view>
+		<view  class="tui-rotate__verify {{!show?'tui-verify__hidden':''}}" style="width: {{width}}rpx; border-radius: {{radius}}rpx; background: {{backgroundColor}}; padding: {{padding}}; z-index:{{zIndex}}">
+			<view class="tui-rotate-icon tui-icon__close" style="color: {{closeColor}}; font-size: {{closeSize}}rpx" catchtap="close"></view>
+			<view class="tui-verify__title" style="color: {{titleColor}}; font-size: {{titleSize}}rpx">{{ title }}</view>
+			<view class="tui-verify__desc" style="color: {{descColor}}; font-size: {{descSize}}rpx">{{ desc }}</view>
+			<view class="tui-box__image" style="width: {{imgWidth}}rpx; height: {{imgWidth}}rpx">
+				<image class="tui-verify__image" src="{{imgSrc}}" style="width: {{imgWidth}}rpx; height: {{imgWidth}}rpx; border-radius: {{imgRadius}};transform:{{'rotate('+angle+'deg)'}}"></image>
+				<view class="tui-verify__result" wx:if="{{isShow || isPass}}" style="width: {{imgWidth}}rpx; height:{{imgWidth}}rpx; border-radius:{{imgRadius}}">
+          <text class="tui-rotate-icon {{isPass?'tui-icon__success':'tui-icon__close'}}" style="color:{{isPass ? (successColor || g_successColor) : (errorColor || g_errorColor)}}"></text>
+				</view>
+			</view>
+			<view class="tui-slider_bar" style="width:{{sliderWidth}}px; height:{{sliderHeight}}px; border-width: {{sliderBarBorderWidth}}rpx;border-style: {{sliderBarBorderStyle}};border-color: {{sliderBarBorderColor || g_primary}};background:{{sliderBarBackground}}">
+				<view class="tui-slider_block" style="width: {{sliderHeight}}px; height: {{sliderHeight}}px; background:{{blockBackground || g_primary}}" change:prop="{{parse.slidereset}}" prop="{{reset}}" data-width="{{sliderWidth}}" data-height="{{sliderHeight}}" data-errorRange="{{errorRange}}" data-angle="{{angle}}" data-disabled="{{isPass}}" data-type="{{type}}" bindtouchstart="{{parse.touchstart}}" bindtouchmove="{{parse.touchmove}}" bindtouchend="{{parse.touchend}}">
+					<text class="tui-rotate-icon tui-icon__arrow" style="color: {{arrowColor}}; font-size: {{arrowSize}}rpx"></text>
+				</view>
+			</view>
+			<slot></slot>
+		</view>
+		<view catchtap="maskClick" class="tui-verify__mask {{!show?'tui-mask__hidden':''}}" style="z-index:{{maskZIndex}}"></view>
+	</view>

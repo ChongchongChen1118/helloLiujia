@@ -1,0 +1,126 @@
+<view>
+		<!--header-->
+		<tui-navigation-bar splitLine  bindinit="initNavigation"  bindchange="opcityChange" scrollTop="{{scrollTop}}" title="我的"
+		 backgroundColor="#fff" color="#333"></tui-navigation-bar>
+		<!--header-->
+		<view class="tui-mybg-box">
+			<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/img_bg_3x.png" class="tui-my-bg" mode="widthFix"></image>
+			<view class="tui-header-center" data-address="../setUp/setUp" bind:tap="nav">
+				<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/mine_def_touxiang_3x.png" class="tui-avatar"  bindtap="href" data-page="3"></image>
+				<view class="tui-info">
+					<view class="tui-nickname">大连东软信息学院</view>
+					<view class="tui-explain">测试自我介绍！！！</view>
+				</view>
+				<view class="tui-set-box">
+					<view class="tui-icon-box tui-icon-setup">
+						<tui-icon name="setup" color="#fff" size="26"></tui-icon>
+					</view>
+				</view>
+			</view>
+			<view class="tui-header-btm" data-page="5">
+				<view class="tui-btm-item" data-address="../myAction/myAction" bind:tap="nav">
+					<view class="tui-btm-num">4</view>
+					<view class="tui-btm-text">参与的活动</view>
+				</view>
+				<view class="tui-btm-item">
+					<view class="tui-btm-num">刘家村</view>
+					<view class="tui-btm-text">所属区域</view>
+				</view>
+				
+			</view>
+		</view>
+		<view class="tui-content-box">
+			<view class="tui-box tui-order-box">
+				<tui-list-cell arrow="{{true}}" padding="0" lineLeft="0"  data-address="../myOrder/myOrder?title=全部订单" bind:tap="nav" data-page="4">
+					<view class="tui-cell-header">
+						<view class="tui-cell-title">我的订单</view>
+						<view class="tui-cell-sub">查看全部订单</view>
+					</view>
+				</tui-list-cell>
+				<view class="tui-order-list">
+					<view class="tui-order-item"  data-address="../myOrder/myOrder?title=待发货" bind:tap="nav" data-page="4">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/icon_daifahuo_3x.png" class="tui-order-icon"></image>
+							<view class="tui-badge tui-badge-red">3</view>
+						</view>
+						<view class="tui-order-text">待发货</view>
+					</view>
+					<view class="tui-order-item"  data-address="../myOrder/myOrder?title=待收货" bind:tap="nav" data-page="4">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/icon_daishouhuo_3x.png" class="tui-order-icon"></image>
+              <view class="tui-badge tui-badge-red">3</view>
+						</view>
+						<view class="tui-order-text">待收货</view>
+					</view>
+					<view class="tui-order-item"  data-address="../wait/wait" bind:tap="nav" data-page="10">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/icon_pingjia_3x.png" class="tui-order-icon"></image>
+							<view class="tui-badge tui-badge-red">3</view>
+						</view>
+						<view class="tui-order-text">待评价</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="tui-box tui-tool-box">
+					<view class="tui-cell-header">
+						<view class="tui-cell-title">常用工具</view>
+					</view>
+				<view class="tui-order-list tui-flex-wrap">
+					<view class="tui-tool-item" data-address="../maps/maps" bind:tap="nav">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/导航_navigation (1).png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">路线导航</view>
+					</view>
+					<view class="tui-tool-item" data-address="../wait/wait" bind:tap="nav">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/微信_wechat.png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">关注公众号</view>
+					</view>
+					<view class="tui-tool-item"  data-address="../gpt/gpt" bind:tap="nav" data-page="6">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/大脑_brain (1).png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">人工智能</view>
+					</view>
+					<view class="tui-tool-item" data-address="../feedback/feedback" bind:tap="nav">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/收件箱_inbox (1).png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">意见建议</view>
+					</view>
+					<view class="tui-tool-item">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/警告.png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">开发中</view>
+					</view>
+					<view class="tui-tool-item" bindtap="href" data-page="9">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/警告.png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">开发中</view>
+					</view>
+					<view class="tui-tool-item">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/警告.png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">开发中</view>
+					</view>
+					<view class="tui-tool-item">
+						<view class="tui-icon-box">
+							<image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/警告.png" class="tui-tool-icon"></image>
+						</view>
+						<view class="tui-tool-text">开发中</view>
+					</view>
+				</view>
+			</view>
+
+			<!--开发-->
+			<tui-divider size="28" bold="{{true}}" backgroundColor="#FFFFFF" color="#333" width="50%">↓ 以下区域开发中，敬请期待 ↓</tui-divider>
+
+			
+		</view>
+	</view>

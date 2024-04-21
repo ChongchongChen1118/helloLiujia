@@ -1,0 +1,24 @@
+<!--活动框-->
+
+<view class="xinxi">
+  <navigator url="../../pages/playDetail/playDetail?id={{play.id}}">
+
+  <tui-row marginBottom="10px" gutter="{{gutter}}">
+  <tui-col span="{{24}}">
+	<view class="tui-col__demo tui-yellow">
+  <image class="img1" src="{{play.photo}}" mode="aspectFill"/>
+  </view>
+  </tui-col>
+</tui-row>
+
+
+  <tui-row marginBottom="10px" gutter="{{gutter}}">
+    <tui-col span="{{24}}">
+      <view class="tui-col__demo tui-yellow">
+        <tui-text padding="0 0 24rpx" block text="{{play.name}}" size="48" fontWeight="600" align="center" color="#F54F5C"></tui-text>
+        <tui-text block text="景点名称" align="center"></tui-text>
+      </view>
+    </tui-col>
+  </tui-row>
+</navigator>
+</view>

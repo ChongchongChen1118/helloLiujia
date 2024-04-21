@@ -1,0 +1,143 @@
+.tui-index-list {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.tui-scroll__view {
+  width: 100vw;
+}
+
+.tui-content__box {
+  position: relative;
+  width: 100%;
+}
+
+.tui-content__title {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-weight: bold;
+
+}
+
+.tui-content__title .tui-title__item {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tui-line__top::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-top: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5) translateZ(0);
+  transform: scaleY(0.5) translateZ(0);
+  transform-origin: 0 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tui-line__bottom::after {
+  content: ' ';
+  position: absolute;
+  border-bottom: 1px solid #ebedf0;
+  -webkit-transform: scaleY(0.5) translateZ(0);
+  transform: scaleY(0.5) translateZ(0);
+  transform-origin: 0 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.tui-index__indicator {
+  position: fixed;
+  right: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 60rpx;
+  font-weight: bold;
+  display: none;
+  z-index: 10;
+}
+
+.tui-index__indicator:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 100% 0% 100% 100%;
+  background: #c9c9c9;
+  transform: rotate(45deg);
+}
+
+.tui-indicator__show {
+  display: block;
+  z-index: 10;
+}
+
+.tui-indicator__tran {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+.tui-index__letter {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.tui-letter__item {
+  padding: 0 8rpx;
+  font-weight: bold;
+}
+
+.tui-letter__key {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  font-size: 26rpx;
+  transform: scale(0.8);
+  transform-origin: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tui-list__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tui-list__item .tui-avatar {
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 8rpx;
+  flex-shrink: 0;
+  background-color: #ccc;
+}
+.tui-list__item view {
+  width: 90%;
+  font-size: 32rpx;
+  padding-left: 20rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

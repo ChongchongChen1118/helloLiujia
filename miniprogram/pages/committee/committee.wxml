@@ -1,0 +1,10 @@
+<view style="padding: 0 25rpx;"><image class="img" src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/我为村民办实事.png" mode="aspectFill"/>
+</view>
+<view class="committee">
+  <view class="content">
+    <view class="box" wx:for="{{committee}}" wx:key="index">
+      <lj-committee-item committee="{{item}}"></lj-committee-item>
+    </view>
+  </view>
+</view>
+<tui-nomore text="没有更多了" backgroundColor="#FFFFFF"></tui-nomore>

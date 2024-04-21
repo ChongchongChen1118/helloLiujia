@@ -1,0 +1,39 @@
+<view class="tui-charts__scatter-wrap" style="width:{{width}}rpx">
+		<view class="tui-scatter__legend" wx:if="{{legend.show}}">
+			<view class="tui-scatter__legend-item" wx:for="{{dataset}}" wx:key="index">
+				<view class="tui-legend__circle" style="background:{{item.color}}"></view>
+				<text
+					style="font-size:{{legend.size || 24}}rpx;line-height:{{legend.size || 24}}rpx;color:{{legend.color || '#333'}}">{{item.name}}</text>
+			</view>
+		</view>
+		<view class="tui-charts__scatter-box" style="width:{{width}}rpx;height:{{height}}rpx">
+			<view class="tui-xAxis__line" wx:for="{{xAxisData}}" wx:key="i" wx:for-item="line" wx:for-index="i"
+				style="left:{{i*(xAxisLine.itemGap || 100)}}rpx;border-left-style:{{i===0?'solid':splitLine.type}};border-left-color:{{i===0?yAxisLine.color:splitLine.color}}">
+				<view class="tui-xAxis__tickmarks"
+					style="height:{{xAxisTick.height || '12rpx'}};background:{{xAxisTick.color || '#e3e3e3'}}"></view>
+				<view class="tui-xAxis__val" style="color:{{xAxisLabel.color}};font-size:{{xAxisLabel.size}}rpx">
+					{{line.value}}
+				</view>
+			</view>
+			<view class="tui-yAxis__line" wx:for="{{yAxisData}}" wx:for-item="ll" wx:for-index="j" wx:key="j"
+				style="bottom:{{j* (yAxisLine.itemGap || 80)}}rpx;border-bottom-style:{{j===0?'solid':splitLine.type}};border-bottom-color:{{j===0?xAxisLine.color:splitLine.color}}">
+				<view class="tui-yAxis__tickmarks"
+					style="width:{{yAxisTick.width || '12rpx'}};background:{{yAxisTick.color || '#e3e3e3'}}"></view>
+				<view class="tui-yAxis__val" style="color:{{yAxisLabel.color}};font-size:{{yAxisLabel.size}}rpx">
+					{{ll.value}}
+				</view>
+			</view>
+			<view wx:for="{{dataset}}" wx:for-item="dd" wx:key="index">
+				<view catchtap="onDotTap" data-index="{{index}}" data-idx="{{idx}}" class="tui-scatter__item {{activeIdx===idx && activeIndex===index && tooltipShow?'tui-scatter__item-active':''}}"	wx:for="{{dd.source}}" wx:for-item="model" wx:for-index="idx" wx:key="idx"
+					style="width:{{dd.width || 12}}rpx;height:{{dd.width || 12}}rpx;background:{{dd.color || '#5677fc'}};left:{{model.x}}rpx;bottom:{{model.y}}rpx">
+				</view>
+			</view>
+		</view>
+    <view class="tui-scatter__tooltip {{tooltipShow?'tui-scatter__tooltip-show':''}}" wx:if="{{tooltip}}">
+			<view class="tui-tooltip__title"></view>
+			<view class="tui-scatter__tooltip-item">
+				<view class="tui-legend__circle" style="background:{{tooltips.color}}"></view>
+				<text class="tui-tooltip__val">{{tooltips.val}}</text>
+			</view>
+		</view>
+	</view>

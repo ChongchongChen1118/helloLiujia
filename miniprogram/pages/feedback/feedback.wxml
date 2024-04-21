@@ -1,0 +1,11 @@
+<view class="container">
+<view class="tui-page__bd">
+  <tui-form id="form">
+    <tui-textarea requiredColor="#EB0909"  required flexStart label="意见反馈" placeholder="欢迎您对我们的系统提出您宝贵的意见" model:value="{{feedback}}"></tui-textarea>
+    <tui-input type="number" required label="联系方式" lineLeft="{{false}}" placeholder="请输入您的手机号" model:value="{{phone}}"></tui-input>
+    <view class="tui-btn__box">
+      <tui-button margin="auto" width="400rpx" height="84rpx" bold bindclick="submit">提交</tui-button>
+    </view>
+  </tui-form>
+</view>
+</view>

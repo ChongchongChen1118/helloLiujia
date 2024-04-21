@@ -1,0 +1,45 @@
+.tui-data-checkbox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tui-data__cb-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  border: 1px solid;
+}
+
+.tui-cb__text {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tui-data__cb-disabled {
+  opacity: .5;
+}
+
+.tui-cb-checkmark {
+  width: 20rpx;
+  height: 40rpx;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: #FFFFFF;
+  border-right-style: solid;
+  border-right-width: 3px;
+  border-right-color: #FFFFFF;
+  transform: rotate(45deg) scale(0.5);
+  transform-origin: 54% 48%;
+  box-sizing: border-box;
+  margin-right: 12rpx;
+}

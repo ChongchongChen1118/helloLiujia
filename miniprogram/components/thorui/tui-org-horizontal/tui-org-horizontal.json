@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tui-org-horizontal": "../tui-org-horizontal/tui-org-horizontal"
+  }
+}

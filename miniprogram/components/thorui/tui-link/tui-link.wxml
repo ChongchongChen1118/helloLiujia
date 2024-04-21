@@ -1,0 +1,2 @@
+<text class="tui-link__text {{underline?'tui-link__underline':''}}"
+		style="color:{{color || g_color}};font-size:{{size}}rpx" bindtap="openURL">{{custom?'':(text || href)}}<slot></slot></text>

@@ -1,0 +1,1 @@
+<text wx:if="{{show && money}}" class="tui-amount-inwords" style="font-size:{{size}}rpx;color:{{color}};font-weight:{{fontWeight}};padding:{{padding}}">{{money}}</text>

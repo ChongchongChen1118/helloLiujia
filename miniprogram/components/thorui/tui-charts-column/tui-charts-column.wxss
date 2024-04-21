@@ -1,0 +1,211 @@
+.tui-charts__column-wrap {
+  position: relative;
+  overflow: visible;
+}
+
+.tui-charts__column-box {
+  position: relative;
+  padding-left: 1px;
+  box-sizing: border-box;
+}
+
+.tui-column__scroll-view {
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.tui-charts__column {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.tui-column__between {
+  justify-content: space-between;
+}
+
+.tui-column__item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 10;
+  transition: all 0.3s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tui-column__bar-opacity {
+  opacity: 0.6;
+}
+
+.tui-column__bar-active {
+  /*这里请勿随意将值改为1*/
+  opacity: 0.9999;
+}
+
+.tui-column__flex-1 {
+  flex: 1;
+}
+
+.tui-column__item-active {
+  background-color: rgba(0, 0, 0, .1);
+  padding-top: 20rpx !important;
+}
+
+.tui-column__flex-column {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.tui-xAxis__tickmarks {
+  position: absolute;
+  right: 0;
+  width: 1px;
+  transform: translateY(100%);
+  bottom: 0;
+}
+
+.tui-column__bar {
+  transition: all 0.3s;
+  flex-shrink: 0;
+  text-align: center;
+  /* border-top: 1px solid; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tui-column__bar-round {
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.tui-column__val {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding-bottom: 12rpx;
+  transform: translate(-50%, -100%);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-all;
+}
+
+.tui-column__xAxis-text {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  flex: 1;
+  transform: translate(-50%, 100%);
+  padding-top: 8rpx;
+  word-break: break-all;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tui-column__border-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  z-index: 11;
+}
+
+.tui-xAxis__line {
+  width: 100%;
+  height: 0;
+  border-top-width: 1px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.tui-line__first {
+  z-index: 12;
+}
+
+.tui-yAxis__val {
+  transform: translateX(-100%);
+  padding-right: 12rpx;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tui-column__legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tui-column__legend-item {
+  display: flex;
+  align-items: center;
+  margin-left: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.tui-legend__circle {
+  height: 20rpx;
+  width: 20rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+  flex-shrink: 0;
+}
+
+.tui-column__tooltip {
+  padding: 30rpx;
+  border-radius: 12rpx;
+  background-color: rgba(0, 0, 0, .6);
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.tui-column__tooltip-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tui-tooltip__title {
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 30rpx;
+}
+
+.tui-column__tooltip-item {
+  display: flex;
+  align-items: center;
+  padding-top: 24rpx;
+  white-space: nowrap;
+}
+
+.tui-tooltip__val {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #fff;
+  margin-left: 6rpx;
+}
+
+.tui-tooltip__val-ml {
+  margin-left: 20rpx;
+}

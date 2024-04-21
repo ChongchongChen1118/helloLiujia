@@ -1,0 +1,5 @@
+<tui-searchbar searchText="提问" placeholder="请输入您想要向人工智能提问的问题" value="{{question}}" bindsearch="search"></tui-searchbar>
+<view style="margin: 25rpx;" wx:if="{{!answer}}">
+<image style="width: 100%; height: 950rpx; border-radius: 20rpx;" src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/gpt.png" mode=""/>
+</view>
+<tui-text padding="30rpx" selectable text="{{answer}}" wx:if="{{answer}}"></tui-text>

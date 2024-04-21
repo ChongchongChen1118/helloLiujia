@@ -1,0 +1,54 @@
+.tui-alert__wrap {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.tui-alert__shrink {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tui-alert__content {
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tui-alert__text {
+  word-break: break-all;
+  display: block;
+  box-sizing: border-box;
+}
+
+.tui-desc__padding {
+  padding-top: 3px;
+}
+
+.tui-text__p-left {
+  padding-left: 20rpx;
+}
+
+.tui-text__p-right {
+  padding-right: 60rpx;
+}
+
+.tui-alert__single {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  flex-direction: row;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tui-alert__icon-close {
+  position: absolute;
+  right: 30rpx;
+  top: 16rpx;
+}

@@ -1,0 +1,35 @@
+.tui-form__box {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tui-form__errmsg {
+  position: fixed;
+  z-index: 990;
+  left: 20rpx;
+  right: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+  opacity: 0;
+  transform: translateZ(0) translateY(-100%);
+  transition: all 0.25s ease-in-out;
+}
+
+.tui-message__show {
+  transform: translateZ(0) translateY(0);
+  opacity: 1;
+}
+
+.tui-form__mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 99;
+}

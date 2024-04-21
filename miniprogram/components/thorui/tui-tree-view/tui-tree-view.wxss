@@ -1,0 +1,4 @@
+.tui-tree__view {
+  width: 100%;
+  position: relative;
+}

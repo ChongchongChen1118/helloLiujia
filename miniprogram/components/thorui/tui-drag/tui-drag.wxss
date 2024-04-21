@@ -1,0 +1,22 @@
+.tui-drag__wrap {
+  position: relative;
+}
+
+.tui-drag__wrap .tui-drag__item {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.tui-drag__transition {
+  transition: transform 0.35s !important;
+}
+
+.tui-drag__wrap .tui-drag__current {
+  z-index: 10 !important;
+}
+
+.tui-drag__wrap .tui-drag__fixed {
+  z-index: 1 !important;
+}

@@ -1,0 +1,7 @@
+<view class="tui-form__box" style="background-color:{{backgroundColor}};padding:{{padding}};border-radius:{{radius}}">
+  <slot></slot>
+  <view class="tui-form__errmsg {{errorMsg?'tui-message__show':''}}"
+    style="top:{{tipTop+'px'}};padding:{{tipPadding}};background-color:{{tipBackgroundColor || g_tipBackgroundColor}};font-size:{{tipSize+'rpx'}};color:{{tipColor}};border-radius:{{tipRidus}}"
+    wx:if="{{showMessage}}">{{errorMsg}}</view>
+  <view class="tui-form__mask" wx:if="{{disabled}}"></view>
+</view>

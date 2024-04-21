@@ -1,0 +1,11 @@
+<view class="tui-code__input" style="margin-top:{{marginTop}}rpx;margin-bottom:{{marginBottom}}rpx">
+		<view class="tui-code__input" style="padding-left:{{gap}}rpx;padding-right:{{gap}}rpx">
+			<view class="tui-cinput__item"	style="width:{{width}}rpx;height:{{height}}rpx;background:{{background}};border-radius:{{radius}}rpx;border-color:{{activeIndex===index || inputVal[index]?(activeColor || g_activeColor):borderColor}};border-top-width:{{borderType==1?borderWidth:0}}rpx;border-left-width:{{borderType==1?borderWidth:0}}rpx;border-right-width:{{borderType==1?borderWidth:0}}rpx;border-bottom-width:{{borderType==1 || borderType==2?borderWidth:0}}rpx" bindtap="onTap" wx:for="{{inputArr}}" wx:key="index">
+				<text class="tui-cinput__text" style="width:{{width}}rpx;height:{{height}}rpx;font-size:{{size}}rpx;line-height:{{height}}rpx;color:{{color}};font-weight:{{fontWeight}}">{{password?(inputVal[index] ? '●':''):(inputVal[index] || '')}}</text>
+				<text class="tui-cinput__placeholder" style="font-size:{{size}}rpx;font-weight:{{fontWeight}}">{{password?(inputVal[index] ? '●':''):(inputVal[index] || '')}}</text>
+				<view class="tui-cinput__cursor {{activeIndex===index && focus?'tui-cinput__cursor-ani':''}}" wx:if="{{cursor && !disabled}}" style="height:{{cursorHeight}}rpx;background:{{cursorColor || g_cursorColor}}">
+				</view>
+			</view>
+		</view>
+    <input value="{{val}}" password="{{password}}" type="{{type}}" class="tui-cinput__hidden" bindinput="onInput" bindblur="onBlur" focus="{{focus}}" maxlength="{{length}}" disabled="{{disabled}}" bindconfirm="onConfirm" bindfocus="onTap" />
+	</view>

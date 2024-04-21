@@ -1,0 +1,53 @@
+:host {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%
+}
+
+.tui-row__box {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.tui-row__box::before,
+.tui-row__box::after {
+  display: table;
+  content: "";
+}
+
+.tui-row__box::after {
+  clear: both;
+}
+
+.tui-row__flex {
+  display: flex !important;
+}
+
+.tui-row__middle {
+  align-items: center;
+}
+
+.tui-row__bottom {
+  align-items: flex-end;
+}
+
+.tui-row__before {
+  display: table
+}
+
+.tui-row__end {
+  justify-content: flex-end;
+}
+
+.tui-row__center {
+  justify-content: center;
+}
+
+.tui-row__space-around {
+  justify-content: space-around;
+}
+
+.tui-row__space-between {
+  justify-content: space-between;
+}

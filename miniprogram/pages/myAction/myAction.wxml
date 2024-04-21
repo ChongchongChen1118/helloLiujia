@@ -1,0 +1,4 @@
+<block wx:for="{{action}}" wx:key="index">
+<lj-action-item action="{{item}}"></lj-action-item>
+</block>
+<tui-nomore text="我是有底线的" backgroundColor="#FFFFFF"></tui-nomore>

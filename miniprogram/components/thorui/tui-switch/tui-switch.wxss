@@ -1,0 +1,49 @@
+.tui-switch__input {
+  display: inline-block;
+}
+
+.tui-checkbox__self {
+  font-size: 0;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+}
+
+.wx-switch-input {
+  margin-right: 0 !important;
+}
+
+.tui-check__mark {
+  width: 20rpx;
+  height: 40rpx;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transform: rotate(45deg) scale(0.5);
+  box-sizing: border-box;
+  transform-origin: 54% 48%;
+}
+
+.tui-switch__hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  border: 0 none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none
+}
+
+.tui-checkbox__disabled {
+  opacity: 0.6;
+}

@@ -1,0 +1,63 @@
+.tui-scale__box {
+  position: relative;
+  display: inline-block;
+}
+
+.tui-scroll__view {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.tui-tickmarks__box {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tui-scale__flex {
+  display: inline-flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.tui-tick__marks {
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+}
+
+.tui-scale__num {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: right;
+  flex-shrink: 0;
+  transform: translate(0,-50%);
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+.tui-seat__box {
+  flex-shrink: 0;
+}
+
+.tui-scale__pointer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0;
+  z-index: 10;
+}
+
+.tui-scale__triangle {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left-style: solid;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}

@@ -1,0 +1,12 @@
+<view class="tui-switch__input" style="zoom:{{scaleRatio}}">
+  <switch wx:if="{{type==='switch'}}" bindchange="change" name="{{name}}" checked="{{val}}" disabled="{{disabled}}"
+    color="{{color || g_color}}">
+  </switch>
+  <view class="tui-checkbox__self {{disabled?'tui-checkbox__disabled':''}}"
+    style="background-color:{{val?(color || g_color):'#fff'}};border:1px solid {{val?(color || g_color):borderColor}}" wx:else>
+    <view class="tui-check__mark" style="border-bottom-color:{{checkMarkColor}};border-right-color:{{checkMarkColor}}"
+      wx:if="{{val}}"></view>
+    <switch class="tui-switch__hidden" bindchange="change" name="{{name}}" type="checkbox" checked="{{val}}"
+      disabled="{{disabled}}"></switch>
+  </view>
+</view>

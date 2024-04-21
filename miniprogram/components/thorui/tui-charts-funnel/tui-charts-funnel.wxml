@@ -1,0 +1,26 @@
+<view class="tui-charts__funnel-wrap {{legend.direction!=='vertical'?'tui-charts__funnel-vertical':''}}">
+		<view class="tui-funnel__legend {{legend.direction==='vertical'?'tui-legend__flex-column':''}}"
+			wx:if="{{legend.show}}">
+			<view class="tui-funnel__legend-item" style="margin-left:{{legend.direction==='vertical'?'0':'24rpx'}}"
+				wx:for="{{dataset}}" wx:key="index">
+				<view class="tui-legend__circle" style="background:{{item.color}}"></view>
+				<text
+					style="font-size:{{legend.size || 24}}rpx;line-height:{{legend.size || 24}}rpx;color:{{legend.color || '#333'}}">{{item.name}}</text>
+			</view>
+		</view>
+		<view class="tui-charts-funnel" style="width:{{w}}px;height:{{h}}px">
+			<view class="tui-charts__funnel-item {{'tui-funnel__'+sort}}" 
+				style="width:{{item.width}}px;height:{{itemHeight}}px;border-top-width:{{sort==='desc'?itemHeight+'px':0}};border-top-color:{{sort==='desc'?item.color:'transparent'}};border-bottom-width:{{sort==='asc'?itemHeight+'px':0}};border-bottom-color:{{sort==='asc'?item.color:'transparent'}};border-left-width:{{item.diff}}px;border-right-width:{{item.diff}}px"
+				wx:for="{{dataset}}" wx:key="index" catchtap="itemClick" data-index="{{index}}"></view>
+			<view class="tui-funnel__tooltip {{tooltipShow?'tui-funnel__tooltip-show':''}}" wx:if="{{tooltip}}">
+				<view class="tui-tooltip__title" wx:if="{{title}}">{{title}}</view>
+				<view class="tui-funnel__tooltip-item" style="padding-top:{{title?'24rpx':'0'}}">
+					<view class="tui-legend__circle"
+						style="background:{{dataset[activeIndex] && dataset[activeIndex].color}}"></view>
+					<text class="tui-tooltip__val">{{dataset[activeIndex] && dataset[activeIndex].name}}</text>
+					<text
+						class="tui-tooltip__val tui-tooltip__val-ml">{{dataset[activeIndex] && dataset[activeIndex].value}}</text>
+				</view>
+			</view>
+		</view>
+	</view>

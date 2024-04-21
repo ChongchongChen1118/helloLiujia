@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "lj-play-item":"../../components/liujia/lj-play-item/lj-play-item"
+  },
+  "navigationBarTitleText": "游玩景点"
+}

@@ -1,0 +1,10 @@
+<tui-tab tabs="{{tabs}}" scroll bindchange="change" selectedColor="#F54F5C" sliderBgColor="#F54F5C" bold scale="1.25"></tui-tab>
+
+<view class="news">
+  <view class="content">
+    <view class="box" wx:for="{{news}}" wx:key="_id">
+     <lj-news-item news="{{item}}"></lj-news-item>
+    </view>
+  </view>
+</view>
+<tui-nomore text="我是有底线的" backgroundColor="#FFFFFF"></tui-nomore>

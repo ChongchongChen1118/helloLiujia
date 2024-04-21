@@ -1,0 +1,20 @@
+<view class="container">
+<view class="tui-page__bd">
+  <tui-form id="form">
+    <tui-input type="text" label="收货人" lineLeft="{{false}}" placeholder="请输入收货人" model:value="{{name}}"></tui-input>
+    <tui-input type="number" label="手机号" lineLeft="{{false}}" placeholder="请输入手机号" model:value="{{phone}}"></tui-input>
+    <view class="tui-number-box">
+			<view class="tui-title">购买数量</view>
+			<tui-numberbox min="{{1}}" max="{{10}}" value="{{shuliang}}" bindchange="change1"></tui-numberbox>
+		</view>
+    <tui-input bindclick="xuanze" disabled label="地区" lineLeft="{{false}}" value="{{house}}" placeholder="请选择地区"></tui-input>
+    <tui-textarea flexStart label="详细地址" placeholder="请输入详细地址" model:value="{{xxhouse}}"></tui-textarea>
+    <view class="tui-btn__box">
+      <tui-button type="green" margin="auto" width="400rpx" height="84rpx" bold bindclick="submit">支付</tui-button>
+    </view>
+  </tui-form>
+</view>
+</view>
+<tui-picker show="{{show__3}}" layer="{{3}}" pickerData="{{items__3}}" params="{{1}}" bindhide="hide"
+bindchange="change2">
+</tui-picker>

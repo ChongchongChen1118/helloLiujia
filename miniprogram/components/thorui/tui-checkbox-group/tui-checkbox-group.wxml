@@ -1,0 +1,3 @@
+<tui-form-field name="{{name}}" value="{{vals}}">
+	<slot></slot>
+</tui-form-field>

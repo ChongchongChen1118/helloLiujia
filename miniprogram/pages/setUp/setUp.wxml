@@ -1,0 +1,14 @@
+<view class="container">
+<view class="tui-page__bd">
+  <tui-form id="form">
+   
+    <tui-input type="text" label="姓名" lineLeft="{{false}}" placeholder="请输入姓名" model:value="{{name}}"></tui-input>
+    <tui-textarea requiredColor="#EB0909" flexStart label="自我介绍" placeholder="请输入自我介绍" model:value="{{introduce}}"></tui-textarea>
+    <view class="tui-btn__box">
+      <tui-button margin="auto" width="400rpx" height="84rpx" bold bindclick="submit">提交</tui-button>
+      <tui-button margin="50rpx auto" width="400rpx" height="84rpx" bold type="danger" bindclick='openActionSheet' data-type="2">退出登录</tui-button>
+    </view>
+  </tui-form>
+</view>
+</view>
+<tui-actionsheet show="{{showActionSheet}}" tips="{{tips}}" item-list="{{itemList}}" mask-closable="{{maskClosable}}" color="{{color}}" size="{{size}}" is-cancel="{{isCancel}}" bindclick="itemClick" bindcancel="closeActionSheet"></tui-actionsheet>

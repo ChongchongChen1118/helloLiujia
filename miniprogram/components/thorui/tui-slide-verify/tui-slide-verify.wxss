@@ -1,0 +1,100 @@
+@font-face {
+	font-family: 'tuiSlideVcode';
+	src: url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAUYAA0AAAAAB1wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAE/AAAABoAAAAci6lfG0dERUYAAATcAAAAHgAAAB4AKQALT1MvMgAAAaAAAABCAAAAVjxuSCZjbWFwAAAB+AAAAEUAAAFK5n3pi2dhc3AAAATUAAAACAAAAAj//wADZ2x5ZgAAAkwAAAD8AAABJDQ/n7JoZWFkAAABMAAAADAAAAA2GSR8FGhoZWEAAAFgAAAAHQAAACQHygOFaG10eAAAAeQAAAARAAAAEgwUAD5sb2NhAAACQAAAAAwAAAAMAFQAkm1heHAAAAGAAAAAHgAAACABEQA6bmFtZQAAA0gAAAFJAAACiCnmEVVwb3N0AAAElAAAAD0AAABPYJEgVXjaY2BkYGAA4oqPSw3j+W2+MnCzMIDAbaY5nHBa5P905jfMeUAuBwMTSBQAHycKCHjaY2BkYGBu+N/AEMPCAALMbxgYGVABCwBYegNYAAAAeNpjYGRgYGBl0GNgYgABEMkFhAwM/8F8BgANfQFMAAB42mNgZGFgnMDAysDA1Ml0hoGBoR9CM75mMGLkAIoysDIzYAUBaa4pDA7PGJ6ZMDf8b2CIYW5gaAAKM4LkAN6ZDA8AAHjaY2GAABYItmMQAQABaABfAAAAeNpjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYnjE8M/n/n4EBQksxS16AqgcCRjYGOIeRCUgwMaACRoZhDwDR6wnSAAAAAAAAAAAAAAAAVACSeNpFzjFOwzAYxfHv2Yodu4ozxHEq2qoSEilLQYoqh6lIIBaugMTC3hswMcPQhYmBjV4AMSFxAppjQDmDSzJle9L7DX9itNx/8i9+QY7mRPDn8ItTlDOcQLhCwcBVtWLCOl/D10v0L5vHnAGMx+EuLSctvQ8PBpMyxWU30/GxwUvMwXqDW6lkNIikllgnGM1MeAqPyWxkeNktczRGgrXUXOkeETGy+2f+x1c0oGnbKUg6KjzVJWUQh23TwlfTrhW+cpZRE3ZCIG8a5EKE3U34yM/sRttCb5hiuNLDjK+i8PO9Db8igmu2cOE1vNsWDTP9xhiuVXZARP+yvTqbeNp9kD1OAzEQhZ/zByQSQiCoXVEA2vyUKRMp9Ailo0g23pBo1155nUg5AS0VB6DlGByAGyDRcgpelkmTImvt6PObmeexAZzjGwr/3yXuhBWO8ShcwREy4Sr1F+Ea+V24jhY+hRvUf4SbuFUD4RYu1BsdVO2Eu5vSbcsKZxgIV3CKJ+Eq9ZVwjfwqXMcVPoQb1L+EmxjjV7iFa2WpDOFhMEFgnEFjig3jAjEcLJIyBtahOfRmEsxMTzd6ETubOBso71dilwMeaDnngCntPbdmvkon/mDLgdSYbh4FS7YpjS4idCgbXyyc1d2oc7D9nu22tNi/a4E1x+xRDWzU/D3bM9JIbAyvkJI18jK3pBJTj2hrrPG7ZynW814IiU68y/SIx5o0dTr3bmniwOLn8owcfbS5kj33qBw+Y1kIeb/dTsQgil2GP5PYcRkAAAB42mNgYoAALjDJyIAOWMGiTIxMjMyCOalpJbop+aVJOam6iUVF+eUCKaWZ6fmlJZmJeckZ+XnpugDvDw1eAAAAAAAAAf//AAIAAQAAAAwAAAAWAAAAAgABAAMABAABAAQAAAACAAAAAHjaY2BgYGQAgqtL1DlA9G2mOZwwGgA1wQSuAAA=)
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.tui-slide-icon {
+	font-family: 'tuiSlideVcode' !important;
+	font-size: 34rpx;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+.tui-icon-check_mark:before {
+	content: '\e634';
+}
+
+.tui-icon-double_arrow:before {
+	content: '\e600';
+}
+
+.tui-slide-vcode {
+	background-color: #eaeef1;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tui-slide-glided {
+	width: 0;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.tui-slider-block {
+	position: absolute;
+	z-index: 2;
+	background-color: #ffffff;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1rpx solid;
+	box-sizing: border-box;
+	left: 0;
+	top: 0;
+	transition: border-color 0.08s;
+}
+
+.tui-block__trans{
+	transition: all 0.3s !important;
+}
+
+.tui-text-flashover {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+  -webkit-animation: animate 1.8s infinite;
+  animation: animate 1.8s infinite;
+}
+.tui-active__text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #fff;
+}
+
+@-webkit-keyframes animate {
+	from {
+		background-position: -90rpx;
+	}
+
+	to {
+		background-position: 90rpx;
+	}
+}
+
+@keyframes animate {
+	from {
+		background-position: -90rpx;
+	}
+
+	to {
+		background-position: 90rpx;
+	}
+}

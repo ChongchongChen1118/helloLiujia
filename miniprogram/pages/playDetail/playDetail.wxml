@@ -1,0 +1,27 @@
+<view>
+  <tui-skeleton wx:if="{{skeletonShow}}" borderRadius="10rpx"></tui-skeleton>
+  <view class="tui-skeleton">
+  <view class="banner">
+  <swiper class="swiper tui-skeleton-rect" previous-margin="30rpx" circular autoplay interval="3000" indicator-dots indicator-active-color="#808080" indicator-color="rgba(255,255,255,0.3)">
+    <swiper-item wx:for="{{infor.lunbo}}" wx:key="index">
+      <image src="{{item}}" mode="" />
+    </swiper-item>
+  </swiper>
+</view>
+<view style="padding: 30rpx 40rpx;">
+<rich-text class="tui-skeleton-rect" user-select class="tui-skeleton-rect" nodes="{{infor.text}}" />
+</view>
+<tui-section class="tui-skeleton-rect" margin="0 35rpx" title="地址" is-line background="#fff"></tui-section>
+<view class="tui-skeleton-rect">
+<tui-text text="{{infor.address}}"  padding="0 67rpx"></tui-text>
+</view>
+<tui-section class="tui-skeleton-rect" margin="0 35rpx" title="联系方式" is-line background="#fff"></tui-section>
+<view class="tui-skeleton-rect">
+<tui-text highlight decoration="underline" color="#5677FC" text="{{infor.phone}}" textType="mobile" call padding="0 67rpx"></tui-text>
+</view>
+</view>
+</view>
+
+<tui-divider height="150" backgroundColor="#FFFFFF" size="30">
+    <tui-icon name="satisfied" size="20"></tui-icon>
+  </tui-divider>

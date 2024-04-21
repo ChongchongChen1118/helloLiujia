@@ -1,0 +1,112 @@
+.tui-copy__box {
+	display: inline-block;
+	position: relative;
+	font-weight: initial;
+}
+.tui-ccpy__text {
+	position: relative;
+	z-index: 2;
+}
+.tui-tooltip__list {
+	font-size: 14px;
+	position: absolute;
+	border-radius: 6px;
+	background-color: #060607;
+	padding: 5px 0;
+	display: flex;
+	align-items: center;
+}
+.tui-tooltip__column {
+	flex-direction: column;
+	padding: 0;
+}
+.tui-tooltip__cell {
+	min-width: 60px;
+	box-sizing: border-box;
+	color: #ffffff;
+	text-align: center;
+	padding: 0 5px;
+}
+
+.tui-tooltip__extend {
+	border-left: 1rpx solid rgba(255, 255, 255, 0.3);
+}
+.tui-tooltip__cell-column {
+	padding: 5px !important;
+	border-left: 0 !important;
+	border-bottom: 1rpx solid rgba(255, 255, 255, 0.3);
+}
+.tui-tooltip__cell:last-child {
+	border-bottom: 0 !important;
+}
+.tui-tooltip__top {
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, -100%);
+	margin-top: -10px;
+}
+
+.tui-tooltip__top::after {
+	content: ' ';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	border-width: 5px;
+	border-style: solid;
+	border-color: #060607 transparent transparent transparent;
+}
+
+.tui-tooltip__bottom {
+	left: 50%;
+	top: 100%;
+	transform: translate(-50%, 0);
+	margin-top: 10px;
+}
+
+.tui-tooltip__bottom::after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -100%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent #060607 transparent;
+}
+
+.tui-tooltip__left {
+	left: 0;
+	top: 50%;
+	transform: translate(-100%, -50%);
+	margin-left: -10px;
+}
+
+.tui-tooltip__left::after {
+	content: ' ';
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	transform: translate(0, -50%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent #060607;
+}
+
+.tui-tooltip__right {
+	left: 100%;
+	top: 50%;
+	transform: translate(0, -50%);
+	margin-left: 10px;
+}
+
+.tui-tooltip__right::after {
+	content: ' ';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-100%, -50%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent #060607 transparent transparent;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "lj-committee-item": "../../components/liujia/lj-committee-item/lj-committee-item"
+  },
+  "navigationBarTitleText": "联系村委"
+}

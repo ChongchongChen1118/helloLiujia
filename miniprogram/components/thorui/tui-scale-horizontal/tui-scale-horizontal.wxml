@@ -1,0 +1,42 @@
+<view class="tui-scale__box">
+		<view class="tui-scale__pointer"	style="width:{{pointerWidth}}px;height:{{pointerWidth}}px;background:{{pointerColor || g_pointerColor}};top:{{pointerTop}}px"
+			wx:if="{{isPointer}}">
+			<view class="tui-scale__triangle" style="top:{{pointerWidth}}px;border-left-width:{{pointerWidth/2}}px;border-right-width:{{pointerWidth/2}}px;border-top-color:{{pointerColor || g_pointerColor}};border-top-width:{{pointerWidth}}px">
+			</view>
+		</view>
+		<scroll-view throttle="{{false}}" scroll-x scroll-with-animation style="width: {{scrollWidth}}px;background: {{backgroundColor}};padding-bottom: {{paddingBottom}}rpx"
+			bindscroll="handleScroll" scroll-left="{{currentLeft}}">
+			<view class="tui-scale__flex">
+				<view class="tui-seat__box" style="width: {{scrollWidth / 2}}px"></view>
+				<view>
+					<view class="tui-tickmarks__box" style="height: {{lHeight}}rpx;border-left-color:{{lineColor}}">
+						<view class="tui-scale__flex" wx:for="{{rulerLength}}"  wx:for-item="m" wx:for-index="i" wx:key="i">
+							<view class="tui-tick__marks" wx:for="{{tickMarks}}" wx:key="index" style="height: {{parse.getHeight(index, height, mHeight, lHeight)}}; width: {{singleWidth}}px;border-right-color:{{lineColor}}">
+							</view>
+						</view>
+					</view>
+					<view class="tui-scale__flex">
+						<view class="tui-scale__num" style="width: {{singleWidth * 10}}px;font-size: {{size}}rpx;padding-top: {{top}}rpx;color:{{color}}">
+							{{ min }}
+						</view>
+						<view class="tui-scale__num" style="width: {{singleWidth * 10}}px; font-size: {{size}}rpx; padding-top: {{top}}rpx;color:{{color}}"
+							wx:for="{{rulerLength}}" wx:for-item="e" wx:for-index="i" wx:key="i">
+							{{ (i + 1) * interval + min }}
+						</view>
+					</view>
+				</view>
+				<view class="tui-seat__box" style="width: {{scrollWidth / 2 - singleWidth * 10}}px"></view>
+			</view>
+		</scroll-view>
+	</view>
+
+ <wxs module="parse">
+	module.exports = {
+		getHeight: function(index, height, mHeight, lHeight) {
+			var h = height;
+      if (index === 4) h = mHeight;
+      if (index === 9) h = lHeight;
+      return h+'rpx';
+		}
+	}
+</wxs>

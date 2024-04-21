@@ -1,0 +1,20 @@
+.tui-wing__blank {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tui-wingblank__hidden {
+  overflow: hidden;
+}
+
+.tui-wingblank__small {
+  padding: 0 10rpx;
+}
+
+.tui-wingblank__default {
+  padding: 0 20rpx;
+}
+
+.tui-wingblank__large {
+  padding: 0 30rpx;
+}

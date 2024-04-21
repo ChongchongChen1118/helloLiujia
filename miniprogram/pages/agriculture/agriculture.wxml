@@ -1,0 +1,8 @@
+<view class="agriculture">
+  <view class="content">
+    <view class="box" wx:for="{{agriculture}}" wx:key="index">
+     <lj-agriculture-item agriculture="{{item}}"></lj-agriculture-item>
+    </view>
+  </view>
+</view>
+<tui-nomore text="我是有底线的" backgroundColor="#FFFFFF"></tui-nomore>

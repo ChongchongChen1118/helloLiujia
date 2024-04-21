@@ -1,0 +1,18 @@
+<view class="tui-pagination__box">
+  <view class="tui-pagination__btn {{currentIndex === 1?'tui-pagination__disabled':''}}"
+    style="width:{{width+'rpx'}};height:{{height+'rpx'}};border-color:{{borderColor}};background-color:{{backgroundColor}};border-radius:{{radius}}"
+    hover-class="tui-pagination__hover" hover-stay-time="{{120}}" bindtap="clickPrev">
+    <text style="color:{{color}};font-size:{{size+'rpx'}}" wx:if="{{!custom}}">{{prevText}}</text>
+    <slot name="prev"></slot>
+  </view>
+  <view class="tui-pagination__num" wx:if="{{isPage}}">
+    <text style="color:{{currentColor || g_currentColor}};font-size:{{pageFontSize+'rpx'}}">{{currentIndex}}</text>
+    <text style="color:{{pageColor}};font-size:{{pageFontSize+'rpx'}}">/{{maxPage || 0}}</text>
+  </view>
+  <view class="tui-pagination__btn {{currentIndex === maxPage?'tui-pagination__disabled':''}}"
+    style="width:{{width+'rpx'}};height:{{height+'rpx'}};border-color:{{borderColor}};background-color:{{backgroundColor}};border-radius:{{radius}}"
+    hover-class="tui-pagination__hover" hover-stay-time="{{120}}" bindtap="clickNext">
+    <text style="color:{{color}};font-size:{{size+'rpx'}}" wx:if="{{!custom}}">{{nextText}}</text>
+    <slot name="next"></slot>
+  </view>
+</view>

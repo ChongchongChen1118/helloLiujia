@@ -1,0 +1,4 @@
+<view	class="tui-countdown__verify {{status > 1 && isOpacity?'tui-verify__opacity':''}}" style="width: {{width}}; height: {{height}}; padding: {{padding}}; margin: {{margin}}; border-radius: {{radius}}; font-size: {{size}}rpx; color: {{color || g_color}}; background: {{background}}" hover-class="{{hover && status == 1 ? 'tui-verify__opacity' : ''}}" hover-stay-time="150" catchtap="sendCode">
+		{{ showText }}
+		<view class="tui-verify__line" style="border-width: {{borderWidth}}; border-color: {{borderColor || g_borderColor}}; border-radius:{{radius}}"></view>
+</view>

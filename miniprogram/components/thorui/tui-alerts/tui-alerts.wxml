@@ -1,0 +1,34 @@
+<view class="tui-alert__wrap"
+  style="background-color:{{backgroundColor?backgroundColor:parse.getColor(type)}};border-radius:{{radius}};padding-top:{{padding[0] || 0}};padding-right:{{padding[1]||0}};padding-bottom:{{padding[2] || padding[0]||0}};padding-left:{{padding[3] || padding[1]||0}}">
+  <view class="tui-alert__shrink" catchtap="leftClick">
+    <slot name="left"></slot>
+    <icon type="{{type}}" size="{{iconSize}}" color="{{iconColor}}" wx:if="{{!isLeft}}"></icon>
+  </view>
+  <view class="tui-alert__content {{!isLeft?'tui-text__p-left':''}} {{closable?'tui-text__p-right':''}}"
+    catchtap="onClick">
+    <text class="tui-alert__text" style="font-size:{{size}};color:{{color}}" wx:if="{{title}}">{{title}}</text>
+    <text class="tui-alert__text tui-desc__padding {{single?'tui-alert__single':''}}"
+      style="font-size:{{descSize}};color:{{descColor}}" wx:if="{{desc}}">{{desc}}</text>
+    <slot name="content"></slot>
+  </view>
+  <view class="tui-alert__shrink">
+    <slot name="right"></slot>
+  </view>
+  <icon catchtap="close" type="cancel" size="{{closeSize}}" color="{{closeColor}}" wx:if="{{closable}}"
+    class="{{desc?'tui-alert__icon-close':''}}">
+  </icon>
+</view>
+
+<wxs module="parse">
+  module.exports = {
+    getColor: function (type) {
+      var color = "#5677fc"
+      var colors = {
+        'success': '#19be6b',
+        'warn': '#ff7900',
+        'clear': '#EB0909'
+      }
+      return colors[type] ? colors[type] : color;
+    }
+  }
+</wxs>

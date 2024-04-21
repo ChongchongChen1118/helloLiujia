@@ -1,0 +1,2 @@
+<!--需要固定宽高滚动在页面层使用scroll-view即可-->
+<view class="tui-table__box" style="{{'border-top:'+(borderTop?borderWidth+' solid '+borderColor:'0')+';'+('border-left:'+(borderLeft?borderWidth+' solid '+borderColor:'0')+';')+('border-bottom:'+(borderBottom?borderWidth+' solid '+borderColor:'0')+';')+('border-right:'+(borderRight?borderWidth+' solid '+borderColor:'0')+';')}}"><slot></slot></view>

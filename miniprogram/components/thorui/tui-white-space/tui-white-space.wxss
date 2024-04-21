@@ -1,0 +1,16 @@
+.tui-white__space {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tui-whitespace__small {
+  height: 10rpx
+}
+
+.tui-whitespace__default {
+  height: 20rpx
+}
+
+.tui-whitespace__large {
+  height: 30rpx
+}

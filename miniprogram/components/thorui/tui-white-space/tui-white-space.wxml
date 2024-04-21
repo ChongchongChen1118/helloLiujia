@@ -1,0 +1,15 @@
+<wxs module="parse">
+    module.exports = {
+      getHeight:function(height) {
+				var styles = ''
+				var h = parseInt(height)
+				if (h && h > 0) {
+					styles += h+'rpx'
+				}
+				return styles
+			}
+    }
+</wxs>
+<view class="tui-white__space {{'tui-whitespace__'+(parse.getHeight(height)?'':size)}}" style="height:{{parse.getHeight(height)}};background:{{background}}" bindtap="handleClick">
+		<slot></slot>
+	</view>

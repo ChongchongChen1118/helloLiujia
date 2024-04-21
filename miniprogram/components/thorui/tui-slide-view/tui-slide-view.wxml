@@ -1,0 +1,19 @@
+<wxs src="./tui-slide-view.wxs" module="handler" />
+<view class="tui-slide-view" style="margin-top: {{marginTop}}rpx;margin-bottom: {{marginBottom}}rpx;">
+		<view bindtransitionend="{{handler.transitionEnd}}" show="{{shown}}" change:show="{{handler.showChange}}" rebounce="{{rebounce}}"
+		 change:rebounce="{{handler.rebounceChange}}" change:duration="{{handler.durationChange}}" duration="{{duration}}"
+		 change:disable="{{handler.disableChange}}" disable="{{disable}}" change:prop="{{handler.sizeReady}}" prop="{{size}}" bindtouchstart="{{handler.touchstart}}"	bindtouchmove="{{handler.touchmove}}" bindtouchend="{{handler.touchend}}" class="tui-slideview__left tui_wxs_left" style="z-index:{{zIndex}}">
+			<slot></slot>
+		</view>
+		<view class="tui-slideview__right tui_wxs_right" style="z-index:{{zIndex}}">
+			<view class="tui-slideview__buttons" wx:if="{{buttons && buttons.length}}">
+				<view wx:for="{{buttons}}" wx:key="index" class="tui-slideview__btn__wrap tui_wxs_btn">
+					<view bindtap="{{handler.hideButton}}" data-data="{{item.data}}" data-index="{{index}}" class="tui-slideview__btn" style="width:{{width}};height:{{height}};padding:{{padding}};border-radius:{{radius}};background:{{item.background}}">
+						<text wx:if="{{!item.src}}" style="font-size:{{fontSize+'rpx'}};color:{{item.color}}">{{item.text}}</text>
+						<image wx:else src="{{item.src}}" style="width:{{item.width}};height:{{item.height}}" />
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="tui-slideview__mask" wx:if="{{shown && showMask}}" catchtap="closeButtonGroup" catchtouchstart="closeButtonGroup"></view>
+	</view>

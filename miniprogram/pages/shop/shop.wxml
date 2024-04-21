@@ -1,0 +1,49 @@
+<!--不可点击搜索框-->
+<tui-searchbar disabled></tui-searchbar>
+<!--果农图片-->
+<view class="photo1"><image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/liujiaphoto/果农.jpg" style="width: 100%; border-radius: 20rpx;" mode="aspectFill"/></view>
+
+
+
+
+
+<!--下拉选择框-->
+<tui-sticky scrollTop="{{scrollTop}}" stickyHeight="152rpx">
+ <view slot="header">
+<view class="tui-drop-input-box">
+    <tui-dropdown-list show="{{dropdownShow}}" top="94" height="400">
+      <view slot="selectionbox">
+        <tui-button type="white" shape="circle" bind:tap="dropDownList" data-index="-1">请选择商品分类
+          <view class="tui-animation {{dropdownShow?'tui-animation-show':''}}">
+            <tui-icon name="turningdown" size="20"></tui-icon>
+          </view>
+        </tui-button>
+      </view>
+      <view slot="dropdownbox">
+        <view class="tui-selected-list">
+          <scroll-view scroll-y class="tui-dropdown-scroll">
+            <block wx:for="{{dropdownlistData}}" wx:key="index">
+              <tui-list-cell padding="0" bind:tap="dropDownList" data-index="{{index}}" unlined="{{dropdownlistData.length-1==index}}">
+                <view class="tui-cell-class">
+                  <tui-icon name="{{item.icon}}" size="{{item.size}}" color="{{item.color}}"></tui-icon>
+                  <text class="tui-ml-20">{{item.name}}</text>
+                </view>
+              </tui-list-cell>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+    </tui-dropdown-list>
+  </view>
+</view>
+</tui-sticky>
+
+
+  <view class="content">
+<view class="body">
+ <view class="box" wx:for="{{proarr}}" wx:key="index">
+ <lj-product-item item="{{item}}"></lj-product-item>
+ </view>
+</view>
+</view>
+<tui-nomore text="我是有底线的" backgroundColor="#EDEDED"></tui-nomore>

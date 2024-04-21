@@ -1,0 +1,25 @@
+<tui-row marginBottom="10px" gutter="{{gutter}}">
+  <tui-grid>
+    <block wx:for="{{dataList}}" wx:key="index">
+    <navigator url="{{item.url1}}">
+      <tui-grid-item cell="{{4}}" border="{{false}}" bottomLine="{{dalse}}">
+        <view class="tui-grid-icon">
+          <image src="{{item.icon}}" style="width: 75rpx; height: 75rpx;"></image>
+        </view>
+        <text class="tui-grid-label">{{item.name}}</text>
+      </tui-grid-item>
+    </navigator>
+    </block>
+  </tui-grid>
+
+
+  <view class="pubTitle" style="margin-bottom: -50rpx;">
+    <view class="en">ACTIVITY</view>
+    <view class="cn">村内活动</view>
+    <view class="line"></view>
+  </view>
+<block wx:for="{{action}}" wx:key="index">
+<lj-action-item action="{{item}}"></lj-action-item>
+</block>
+<tui-nomore text="我是有底线的" backgroundColor="#FFFFFF"></tui-nomore>
+</tui-row>

@@ -1,0 +1,30 @@
+<view class="tui-gallery {{show?'tui-gallery_show':''}}">
+		<view class="tui-gallery__info">{{currentIndex+1}}/{{imgUrls.length}}</view>
+    <swiper class="tui-gallery__img__wrap" bindtap="hideGallery" indicator-dots="{{false}}" bindchange="change" current="{{defCurIndex}}"
+		 autoplay="{{false}}" duration="{{500}}">
+			<block wx:for="{{imgUrls}}" wx:key="index">
+				<swiper-item>
+					<image mode="aspectFit" class="tui-gallery__img" src="{{item.src}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		<view class="tui-gallery__desc" wx:if="{{!showDelete}}">
+			{{parse.getDesc(currentIndex,imgUrls)}}
+		</view>
+		<view class="tui-gallery__operate" hover-class="tui-opacity__del" :hover-start-time="150" bindtap="deleteImg" wx:if="{{showDelete}}">
+			删除
+		</view>
+	</view>
+
+  <wxs module="parse">
+      module.exports = {
+        getDesc:function(index,imgUrls){
+          var desc = ''
+          var item =imgUrls[index]
+          if (item) {
+            desc = item.desc
+          }
+          return desc
+        }
+      }
+  </wxs>

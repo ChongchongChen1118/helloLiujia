@@ -1,0 +1,94 @@
+.tui-slider__box {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.tui-slider__glided {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.tui-section__glided {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.tui-slider__trans {
+  transition: all 0.2s;
+}
+
+.tui-slider__block {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  left: 0;
+  top: 50%;
+}
+
+.tui-section__block {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  right: 0;
+  top: 50%;
+}
+
+.tui-value__box {
+  position: absolute;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.tui-value__top {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  margin-top: -10px;
+}
+
+.tui-triangle__top {
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-width: 5px;
+  border-style: solid;
+}
+
+.tui-value__bottom {
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  margin-top: 10px;
+}
+
+.tui-triangle__bottom {
+  position: absolute;
+  top: 1rpx;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  border-width: 5px;
+  border-style: solid;
+}

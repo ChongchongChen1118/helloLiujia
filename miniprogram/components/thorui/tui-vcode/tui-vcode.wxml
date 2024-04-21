@@ -1,0 +1,1 @@
+<canvas class="tui-vcode--box" canvas-id="{{canvasId}}" id="{{canvasId}}" style="width:{{width}}px;height:{{height}}px" bindtap="draw"></canvas>

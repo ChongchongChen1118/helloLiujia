@@ -1,0 +1,5 @@
+.tui-poster__cv {
+  position: fixed;
+  left: -9999px;
+  bottom: 0;
+}

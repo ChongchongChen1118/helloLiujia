@@ -1,0 +1,17 @@
+<view>
+  <view class="tui-alert-class tui-alert-box {{show?'tui-alert-show':''}}">
+    <view class="tui-alert-content" style="font-size:{{size}}rpx;color:{{color}}">
+      <slot></slot>
+    </view>
+    <view class="tui-alert-btn" style="color:{{parse.getColor(btnColor,g_btnColor)}}" hover-class="tui-alert-btn-hover" hover-stay-time="150" catchtap="handleClick">{{btnText}}</view>
+  </view>
+  <view class="tui-alert-mask {{show?'tui-alert-mask-show':''}}" catchtap="handleClickCancel"></view>
+</view>
+
+<wxs module="parse">
+ module.exports={
+  getColor:function(btnColor,g_btnColor) {
+      return btnColor || g_btnColor || '#EB0909';
+   }
+ }
+</wxs>

@@ -1,0 +1,111 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shop/shop",
+    "pages/dang/dang",
+    "pages/news/news",
+    "pages/my/my",
+    "pages/maps/maps",
+    "pages/newsDetail/newsDetail",
+    "pages/play/play",
+    "pages/actionDetail/actionDetail",
+    "pages/actionApplication/actionApplication",
+    "pages/playDetail/playDetail",
+    "pages/agriculture/agriculture",
+    "pages/agricultureDetail/agricultureDetail",
+    "pages/chat/chat",
+    "pages/wait/wait",
+    "pages/appeal/appeal",
+    "pages/committee/committee",
+    "pages/myOrder/myOrder",
+    "pages/myAction/myAction",
+    "pages/feedback/feedback",
+    "pages/setUp/setUp",
+    "pages/gpt/gpt",
+    "pages/productDetails/productDetails",
+    "pages/shopBuy/shopBuy"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "你好 · 刘家村",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#404040",
+    "selectedColor": "#D0021B",
+    "list": [
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"images/index.png",
+        "selectedIconPath":"images/index_i.png"
+      },
+      {
+        "pagePath":"pages/dang/dang",
+        "text":"便民服务",
+        "iconPath":"images/dang.png",
+        "selectedIconPath":"images/dang_i.png"
+      },
+      {
+        "pagePath":"pages/news/news",
+        "text":"刘家新闻",
+        "iconPath":"images/news.png",
+        "selectedIconPath":"images/news_i.png"
+      },
+      {
+        "pagePath":"pages/shop/shop",
+        "text":"购物",
+        "iconPath":"images/shop.png",
+        "selectedIconPath":"images/shop_i.png"
+      },
+      {
+        "pagePath":"pages/my/my",
+        "text":"我的",
+        "iconPath":"images/my.png",
+        "selectedIconPath":"images/my_i.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "tui-notice-bar": "components/thorui/tui-notice-bar/tui-notice-bar",
+    "tui-icon": "components/thorui/tui-icon/tui-icon",
+    "tui-row": "components/thorui/tui-row/tui-row",
+    "tui-col": "components/thorui/tui-col/tui-col",
+    "tui-text": "components/thorui/tui-text/tui-text",
+    "lj-news-item":"components/liujia/lj-news-item/lj-news-item",
+    "tui-footer": "components/thorui/tui-footer/tui-footer",
+    "tui-loadmore": "components/thorui/tui-loadmore/tui-loadmore",
+    "tui-nomore": "components/thorui/tui-nomore/tui-nomore",
+    "lj-product-item":"components/liujia/lj-product-item/lj-product-item",
+    "lj-action-item":"components/liujia/lj-action-item/lj-action-item",
+    "tui-skeleton": "components/thorui/tui-skeleton/tui-skeleton",
+    "tui-input": "components/thorui/tui-input/tui-input",
+    "tui-button": "components/thorui/tui-button/tui-button",
+    "tui-form": "components/thorui/tui-form/tui-form",
+    "tui-picker": "components/thorui/tui-picker/tui-picker",
+    "tui-section": "components/thorui/tui-section/tui-section",
+    "tui-divider": "components/thorui/tui-divider/tui-divider",
+    "tui-msg": "components/thorui/tui-msg/tui-msg",
+    "tui-textarea": "components/thorui/tui-textarea/tui-textarea",
+    "lj-committee-item": "components/liujia/lj-committee-item/lj-committee-item",
+    "tui-actionsheet": "components/thorui/tui-actionsheet/tui-actionsheet",
+    "tui-searchbar": "components/thorui/tui-searchbar/tui-searchbar"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于定位效果展示"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "choosePoi",
+    "onLocationChange",
+    "startLocationUpdate",
+    "chooseLocation",
+    "chooseAddress"
+  ]
+}

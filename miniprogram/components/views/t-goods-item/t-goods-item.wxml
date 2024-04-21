@@ -1,0 +1,59 @@
+<view class="tui-goods__item {{isList?'tui-full__item':''}}" bindtap="detail">
+		<view class="tui-image__box {{isList?'tui-full__imgbox':''}}">
+			<image class="tui-goods__img {{isList?'tui-full__img':''}}" src="{{item.img}}" mode="widthFix"></image>
+		</view>
+		<view class="tui-goods__content {{isList?'tui-full__content':''}}">
+			<view class="tui-goods__title">{{ item.name || '' }}</view>
+			<view class="tui-tag__box" wx:if="{{item.newGuest && !isList}}"><tui-tag plain size="24rpx" type="red" padding="8rpx 12rpx">新客专享</tui-tag></view>
+			<view class="tui-box__bottom">
+				<view class="tui-price__box">
+					<view class="tui-price">
+						<view class="tui-price__small">￥</view>
+						<view class="tui-price__large">{{ parse.integerPrice(item.sale) }}</view>
+						<view class="tui-price__small">.{{ parse.decimalPrice(item.sale) }}</view>
+					</view>
+					<view class="tui-price__original">￥{{ item.factory || '0.00' }}</view>
+				</view>
+				<view style="opacity:{{item.subscribe && status==3 ? 0.5 : 1}}">
+					<tui-button
+						width="{{status == 3 ? '146rpx' : '144rpx'}}"
+						height="{{status == 3 ? '60rpx' : '50rpx'}}"
+						size="{{status == 3 ? 26 : 24}}"
+						type="{{status == 1 ? 'gray' : 'danger'}}"
+						disabled="{{status == 1}}"
+						plain="{{status == 3}}"
+					>
+						{{ parse.getBtnText(status,item.subscribe) }}
+					</tui-button>
+				</view>
+			</view>
+		</view>
+		<image wx:if="{{item.newGuest && isList}}" src="https://thorui.cn/images/mall/img_seckill_newguest.png" class="tui-img__newguest" mode="widthFix"></image>
+	</view>
+
+<wxs module="parse">
+	module.exports = {
+	 getBtnText:function(status, subscribe) {
+			status = status || 1;
+			var text = ['活动已结束', '立即抢购', '立即预约'][status - 1];
+			if (status == 3 && subscribe) {
+				text = '取消预约';
+			}
+			return text;
+		},
+    integerPrice: function(sale) {
+			var price = sale || '0.00';
+			if (~price.indexOf('.')) {
+				return price.split('.')[0];
+			}
+			return price;
+		},
+		decimalPrice: function(sale) {
+			var price = sale || '0.00';
+			if (~price.indexOf('.')) {
+				return price.split('.')[1];
+			}
+			return '00';
+		}
+	}
+</wxs>

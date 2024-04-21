@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tui-bubble-popup": "../../components/thorui/tui-bubble-popup/tui-bubble-popup"
+  },
+  "navigationBarTitleText": "问答"
+}

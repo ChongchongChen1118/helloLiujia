@@ -1,0 +1,23 @@
+<block wx:for="{{wenti}}" wx:key="index">
+<view class="tui-chat-item">
+			<image class="tui-user-avatar tui-mr" src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/2b18fc6a9af83fd5b6911144f995ccfa.jpg"></image>
+			<view class="tui-chat-box">
+				<view class="tui-user-name" wx:if="{{true}}">用户</view>
+				<tui-bubble-popup direction="left" position="relative" mask="{{false}}" show="{{true}}" triangleLeft="-22rpx" triangleTop="30rpx"
+				 width="100%" backgroundColor="#5677FC">
+					<view class="tui-chat-text">{{item.question}}</view>
+				</tui-bubble-popup>
+			</view>
+		</view>
+		<view class="tui-chat-item tui-flex-end">
+			<view class="tui-chat-box">
+				<view class="tui-user-name" wx:if="{{true}}" style="text-align: right;">刘家村</view>
+				<tui-bubble-popup direction="right" position="relative" mask="{{false}}" show="{{true}}" triangleRight="-22rpx"
+				 triangleTop="30rpx" width="100%" flexEnd="{{true}}" backgroundColor="#19be6b">
+					<view class="tui-chat-text">{{item.answer}}</view>
+				</tui-bubble-popup>
+			</view>
+			<image class="tui-user-avatar tui-ml" src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/你好·刘家村.png"></image>
+		</view>
+  </block>
+  <tui-divider gradual="{{true}}" gradualColor="{{gradualColor}}" height="150">更多问答敬请期待...</tui-divider>

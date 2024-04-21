@@ -1,0 +1,10 @@
+<view class="tui-lazyload__box"
+  style="background-color:{{placeholder?'transparent':backgroundColor}};width:{{width}};border-radius:{{radius}}"
+  bindtap="handleClick">
+  <image
+    class="tui-lazyload__img {{!placeholder && fadeShow && !show?'tui-img__hidden':''}} {{show && !placeholder && fadeShow?'tui-img__appear':''}}"
+    style="height:{{height}};border-radius:{{radius}}" id="{{uid}}" src="{{show?src:placeholder}}" mode="{{mode}}"
+    webp="{{webp}}" show-menu-by-longpress="{{showMenuByLongpress}}" draggable="{{draggable}}" bindload="load"
+    binderror="error"></image>
+  <slot></slot>
+</view>

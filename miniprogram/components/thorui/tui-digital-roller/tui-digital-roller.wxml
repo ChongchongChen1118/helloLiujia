@@ -1,0 +1,7 @@
+<view class="tui-digital__roller">
+		<view class="tui-digital__box" wx:for="{{columns}}" wx:key="index" style="width:{{cellWidth}};height:{{height+'px'}}">
+			<view class="tui-digital__column" style="transform:translate3d(0, -{{keys[index] * height}}px, 0);transition-duration:{{duration}}s;transition-timing-function:{{animation}}">
+				<view class="tui-digital__item" wx:for-items="{{item}}" wx:for-item="val" wx:for-index="idx" wx:key="idx" style="color:{{color || g_color}};font-size:{{size+'rpx'}};font-weight:{{bold?'bold':'normal'}};height:{{height+'px'}};line-height:{{size+'rpx'}}">{{val}}</view>
+			</view>
+		</view>
+	</view>

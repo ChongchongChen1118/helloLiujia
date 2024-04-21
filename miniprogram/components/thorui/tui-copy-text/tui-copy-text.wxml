@@ -1,0 +1,8 @@
+<view class="tui-copy__box">
+		<text	selectable="{{systemCopy}}" class="tui-ccpy__text" bindlongpress="handleCopy" style="color: {{color}}; font-size: {{size + 'rpx'}};font-weight: {{bold ? 'bold' : 'normal'}}; background-color:{{showToolTip ? backgroundColor : 'transparent'}}">{{ value }}	</text>
+		<view	wx:if="{{showToolTip && !systemCopy}}"	class="tui-tooltip__list {{'tui-tooltip__' + direction}} {{(direction == 'left' || direction == 'right') && buttons.length > 0 ? 'tui-tooltip__column' : ''}}"	style="z-index: {{zIndex}}"	>
+			<view	wx:if="{{!removeCopy || buttons.length === 0}}"	class="tui-tooltip__cell {{(direction == 'left' || direction == 'right') && buttons.length > 0 ? 'tui-tooltip__cell-column' : ''}}"	catchtap="copy">复制</view><view	class="tui-tooltip__cell tui-tooltip__extend {{direction == 'left' || direction == 'right' ? 'tui-tooltip__cell-column' : ''}}"	wx:for="{{buttons}}"	wx:key="index"	data-index="{{index}}" catchtap="buttonTap">
+				{{ item }}
+			</view>
+		</view>
+	</view>

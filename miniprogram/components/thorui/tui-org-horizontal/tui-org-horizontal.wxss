@@ -1,0 +1,47 @@
+.tui-org__horizontal {
+  display: flex;
+}
+
+.tui-node__vertical-line {
+  display: inline-block;
+  width: 1px;
+  flex-shrink: 0;
+}
+
+.tui-orgh__item {
+  display: flex;
+  align-items: center;
+}
+
+.tui-node__horizontal-line {
+  display: inline-block;
+  height: 1px;
+  flex-shrink: 0;
+}
+
+
+.tui-orgh__node-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.tui-orgh__node-text {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.tui-org__item-border {
+  border: 1px solid;
+}
+
+.tui-org__item-hidden {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

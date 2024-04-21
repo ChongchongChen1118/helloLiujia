@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'tuiRotateVerify';
+  src: url('data:font/truetype;charset=utf-8;base64,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') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.tui-rotate-icon {
+  font-family: 'tuiRotateVerify' !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tui-icon__close:before {
+  content: '\e612';
+}
+
+.tui-icon__success:before {
+  content: '\e60d';
+}
+
+.tui-icon__arrow:before {
+  content: '\e64f';
+}
+
+.tui-icon__close {
+  position: absolute;
+  padding: 20rpx 20rpx 0 0;
+  right: 10rpx;
+  top: 10rpx;
+}
+
+.tui-verify__result .tui-icon__close {
+  position: static;
+  padding: 0;
+  font-size: 100rpx;
+}
+
+.tui-rotate__verify {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  opacity: 1;
+}
+.tui-rotate__verify.tui-verify__hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tui-verify__mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  transition: all .2s ease-in
+}
+
+.tui-verify__mask.tui-mask__hidden {
+  opacity: 0;
+  transform: scale3d(1, 1, 0)
+}
+
+.tui-verify__title {
+  text-align: center;
+  padding-top: 30rpx;
+}
+
+.tui-verify__desc {
+  text-align: center;
+  padding-top: 20rpx;
+}
+
+.tui-box__image {
+  position: relative;
+  margin: 50rpx auto 80rpx;
+}
+
+.tui-verify__image {
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 50%;
+  display: block;
+}
+
+.tui-verify__result {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.tui-icon__success {
+  font-size: 100rpx;
+}
+
+.tui-slider_bar {
+  border-radius: 100px;
+  margin: 0 auto;
+}
+
+.tui-slider_block {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.tui-block__trans {
+  transition: all 0.3s !important;
+}

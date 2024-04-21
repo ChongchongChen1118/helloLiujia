@@ -1,0 +1,6 @@
+.tui-link__underline {
+  text-decoration: underline;
+}
+.tui-link__text{
+  display: inline;
+}

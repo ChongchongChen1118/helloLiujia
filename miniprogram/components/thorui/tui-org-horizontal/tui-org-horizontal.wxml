@@ -1,0 +1,42 @@
+<wxs module="parse">
+ module.exports={
+  getStyles:function(treeHeight, index,treeData,lineColor){
+    var length = treeData.length;
+				if (length == 1 || length == 0) {
+					return  "height:0;background:"+ lineColor+";display:none;"
+				} else {
+					var height = 0;
+					var marginTop = 0;
+					var marginBtm = 0;
+					if (index == 0) {
+						height = treeHeight / 2;
+						marginTop = height;
+						return "height:"+height+"px;background:"+lineColor+";margin-top:"+marginTop+"px;" 
+					}
+					if (index == length - 1) {
+						height = treeHeight / 2;
+						marginBtm = height;
+						return "background:"+lineColor+";height:"+height+"px;"+"margin-bottom:"+marginBtm+"px;"
+					} else {
+						height = treeHeight;
+						return "background:"+lineColor+";height:"+height+"px;"
+					}
+        }
+  }
+ }
+</wxs>
+<view class="tui-org__horizontal">
+		<view>
+			<view class="tui-orgh__item" wx:for="{{options}}" wx:key="index">
+				<view class="tui-node__vertical-line" style="{{parse.getStyles(item.height, index,treeData,lineColor)}}" wx:if="{{!item.isOrgRoot}}">
+				</view>
+				<view class="tui-node__horizontal-line" wx:if="{{!item.isOrgRoot}}"	style="background:{{lineColor || borderColor}};width:{{lineWidth}}rpx"></view>
+				<view class="tui-orgh__node-item {{borderColor && borderColor!==true && borderColor!=='true' && borderColor!=='transparent'?'tui-org__item-border':''}}"
+					style="width:{{width!=0 ?(width+'rpx'):'auto'}};height:{{itemHeight}}px;padding-left:{{(width!=0?8:padding)}}rpx;padding-right:{{width!=0?8:padding}}rpx;border-radius:{{radius}}rpx;background:{{background}};border-color:{{borderColor}}" catchtap="onClick" data-item="{{item}}">
+					<text class="tui-orgh__node-text {{width!=0?'tui-org__item-hidden':''}}" style="font-size:{{size}}rpx;color:{{color}}">{{item[fields[0] || 'text']}}</text>
+				</view>
+				<view class="tui-node__horizontal-line"	wx:if="{{item[fields[1] ||'children']&&item[fields[1] ||'children'].length !== 0}}"	style="background:{{lineColor || borderColor}};width:{{lineWidth}}rpx"></view>
+				<tui-org-horizontal root="{{false}}" width="{{width}}" fields="{{fields}}" height="{{height}}" padding="{{padding}}" radius="{{radius}}" background="{{background}}" size="{{size}}" color="{{color}}" borderColor="{{borderColor}}" lineWidth="{{lineWidth}}" lineColor="{{lineColor}}" gap="{{gap}}" treeData="{{item[fields[1] ||'children']}}" wx:if="{{item[fields[1] ||'children']&&item[fields[1] ||'children'].length !== 0}}"	bindclick="handleClick"></tui-org-horizontal>
+			</view>
+		</view>
+	</view>

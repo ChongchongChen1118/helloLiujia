@@ -1,0 +1,56 @@
+<view>
+  <tui-skeleton wx:if="{{skeletonShow}}"></tui-skeleton>
+  <view class="tui-skeleton">
+
+    <view class="detail">
+      <view class="banner tui-skeleton-rect">
+        <swiper class="swiper" previous-margin="30rpx" circular autoplay interval="3000" indicator-dots indicator-active-color="#808080" indicator-color="rgba(255,255,255,0.3)">
+          <swiper-item wx:for="{{detail.picpath}}" wx:key="index">
+            <image src="{{item}}" mode="aspectFill" />
+          </swiper-item>
+        </swiper>
+      </view>
+
+      <view class="textMain">
+        <view class="title tui-skeleton-rect">
+          {{detail.title}}
+        </view>
+        <view class="text">
+
+          <view class="row tui-skeleton-rect">
+            <view class="left"><text space="emsp">货 号：</text></view>
+            <view class="right">{{detail.pronum}}</view>
+          </view>
+
+          <view class="row tui-skeleton-rect">
+            <view class="left"><text space="emsp">等 级：</text></view>
+            <view class="right">{{detail.grade}}</view>
+          </view>
+
+          <view class="row tui-skeleton-rect">
+            <view class="left"><text space="emsp">日 期：</text></view>
+            <view class="right">{{detail.day}}</view>
+          </view>
+
+          <view class="row tui-skeleton-rect">
+            <view class="left"><text space="emsp">库 存：</text></view>
+            <view class="right">{{detail.inventory}}</view>
+          </view>
+
+          <view class="row tui-skeleton-rect">
+            <view class="left"><text space="emsp">单 位：</text></view>
+            <view class="right">{{detail.unit}}</view>
+          </view>
+
+          <view class="row tui-skeleton-rect">
+            <view class="left"><text space="emsp">价 格：</text></view>
+            <view class="right">{{detail.price}}￥</view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+<tui-button margin="auto" type="green" width="350rpx" shadow bind:tap="buy">购买</tui-button>

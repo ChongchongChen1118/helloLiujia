@@ -1,0 +1,75 @@
+<view class="tui-charts__column-wrap">
+  <view class="tui-column__legend" wx:if="{{legend.show}}">
+    <view class="tui-column__legend-item" wx:for="{{dataset}}" wx:key="index">
+      <view class="tui-legend__circle" style="background-color:{{item.color}}"></view>
+      <text
+        style="font-size:{{(legend.size || 24)+'rpx'}};line-height:{{(legend.size || 24)+'rpx'}};color:{{legend.color || '#333'}}">{{item.name}}</text>
+    </view>
+  </view>
+  <view class="tui-charts__column-box" wx:if="{{xAxis.length>0 && dataset.length>0}}">
+    <scroll-view scroll-x="{{scrollable}}" class="tui-column__scroll-view" style="height:{{scrollViewH+'rpx'}}">
+      <view style="height:{{(xAxisVal.height || 2) +'rpx'}}" wx:if="{{xAxisVal.show}}"></view>
+      <view class="tui-charts__column" style="height:{{height+'rpx'}}">
+        <view
+          class="tui-column__item {{!scrollable?'tui-column__flex-1':''}} {{isStack?'tui-column__flex-column':''}} {{activeIndex===index && clickEffect==1?'tui-column__item-active':''}} {{clickEffect==2?'tui-column__bar-opacity':''}} {{clickEffect==2 && activeIndex==index?'tui-column__bar-active':''}}"
+          style="padding:{{scrollable? (xAxisLine.itemPadding ||'0 30rpx'):'0'}}" wx:for="{{xAxis}}" wx:key="index">
+          <view class="tui-column__val"
+            wx:if="{{(xAxisVal.show && clickEffect!=2 ) || (xAxisVal.show && clickEffect==2 && activeIndex===index)}}"
+            style="color:{{xAxisVal.color}};font-size:{{(xAxisVal.size || 24)+'rpx'}};white-space:{{xAxisVal.nowrap?'nowrap':'normal'}}">
+            {{yAxisValArr[index] || ''}}
+          </view>
+          <view class="tui-column__bar {{columnCap==='round'?'tui-column__bar-round':''}}" wx:for-items="{{dataset}}" wx:for-item="bar" wx:for-index="idx" wx:key="idx"
+            style="width:{{columnBarWidth+'rpx'}};border-top-color:{{bar.colors[index]}};background:{{bar.colors[index]}};height:{{parse.getBarHeight(bar.source[index],dataset, splitNumber, yAxisLine.itemGap,min,isStack,isMinus)}}rpx;margin-bottom: {{parse.getMarginBottom(bar.source[index], yAxisLine.itemGap,min,splitNumber,isMinus,isStack)}}rpx;" catchtap="onBarTap" data-index="{{index}}" data-idx="{{idx}}">
+          </view>
+          <view class="tui-column__xAxis-text"
+            style="color:{{xAxisLabel.color || '#333'}};font-size:{{(xAxisLabel.size || 24)+'rpx'}}">
+            {{item}}
+          </view>
+          <view class="tui-xAxis__tickmarks"
+            style="height:{{xAxisTick.height || '12rpx'}};background-color:{{xAxisTick.color || '#e3e3e3'}}">
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="tui-column__border-left"
+      style="height:{{height+(xAxisVal.show?(xAxisVal.height || 2):0)+'rpx'}};background-color:{{yAxisLine.color || '#e3e3e3'}}">
+    </view>
+    <view class="tui-xAxis__line {{index===0?'tui-line__first':''}}"
+      style="bottom:{{index*(yAxisLine.itemGap || 60)+(xAxisLabel.height || 60)+'rpx'}};border-top-style:{{index===0?'solid':splitLine.type}};border-top-color:{{index===0?xAxisLine.color:splitLine.color}}"
+      wx:for="{{yAxisData}}" wx:key="index">
+      <text class="tui-yAxis__val"
+        style="color:{{item.color || yAxisLabel.color}};font-size:{{(yAxisLabel.size||24)+'rpx'}}"
+        wx:if="{{yAxisLabel.show}}">{{item.value}}</text>
+    </view>
+  </view>
+  <view class="tui-column__tooltip {{tooltipShow?'tui-column__tooltip-show':''}}" wx:if="{{tooltip}}">
+    <view class="tui-tooltip__title">{{xAxis[activeIndex] || ''}}</view>
+    <view class="tui-column__tooltip-item" wx:for="{{tooltips}}" wx:key="index">
+      <view class="tui-legend__circle" style="background-color:{{item.color}}"></view>
+      <text class="tui-tooltip__val">{{item.name}}</text>
+      <text class="tui-tooltip__val tui-tooltip__val-ml">{{item.val}}</text>
+    </view>
+  </view>
+</view>
+
+<wxs module="parse">
+	module.exports = {
+    getBarHeight:function(value, dataset, splitNumber, itemGap,min,isStack,isMinus) {
+        var minVal = min;
+				if (isMinus && !isStack) {
+					value = Math.abs(value)
+					minVal = 0
+				}
+      return ((value - (isStack ? (minVal / dataset.length) : minVal)) / splitNumber) * (itemGap ||
+					60)
+			},
+			getMarginBottom:function(value, itemGap,min,splitNumber,isMinus,isStack) {
+				var mb = 0
+				if (isMinus && !isStack && min < 0) {
+					var minVal = value > 0 ? Math.abs(min) : (value - min)
+					mb = minVal / splitNumber * (itemGap || 60)
+				}
+				return mb 
+			}
+	}
+</wxs>

@@ -1,0 +1,24 @@
+<view class="tui-searchbar__box" style="background-color: {{backgroundColor}}; padding:{{padding}}">
+ <slot></slot>
+	<view class="tui-search-bar__form" style="height: {{height}};">
+		<view wx:if="{{showInput}}" class="tui-search-bar__box"
+			style="height: {{height}}; border-radius: {{radius}}; background-color: {{inputBgColor}}">
+			<icon class="tui-icon-search" type="search" size="{{searchSize}}"></icon>
+			<input type="text" class="tui-search-bar__input" placeholder="{{placeholder}}" value="{{valueTxt}}"
+				focus="{{isFocus}}" disabled="{{disabled}}" confirm-type="search" bindblur="inputBlur" bindfocus="inputFocus"
+				bindinput="inputChange" bindconfirm="search" />
+			<icon type="clear" size="{{clearSize}}" class="tui-icon-clear" wx:if="{{valueTxt.length > 0 && !disabled}}"
+				catchtap="clearInput"></icon>
+		</view>
+		<label class="tui-search-bar__label"
+			style="height: {{height}};border-radius: {{radius}}; background-color: {{inputBgColor}}"
+			wx:if="{{!isFocus && !searchState && showLabel}}" bindtap="tapShowInput">
+			<icon class="tui-icon-search" type="search" size="{{searchSize}}"></icon>
+			<text class="tui-search-bar__text">{{ placeholder }}</text>
+		</label>
+	</view>
+	<view wx:if="{{cancel && searchState && !valueTxt}}" class="tui-search-bar__cancel-btn" style="color: {{cancelColor}}"
+		bindtap="hideInput">{{ cancelText }}</view>
+	<view wx:if="{{valueTxt && !disabled && searchState}}" class="tui-search-bar__cancel-btn"
+		style="color:{{searchColor || g_searchColor}}" bindtap="search">{{ searchText }}</view>
+</view>

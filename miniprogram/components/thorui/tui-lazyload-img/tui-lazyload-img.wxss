@@ -1,0 +1,19 @@
+.tui-lazyload__box {
+  display: inline-block;
+  position: relative;
+}
+
+.tui-lazyload__img {
+  width: 100%;
+  display: block;
+  flex-shrink: 0;
+  transition: opacity .3s linear;
+}
+
+.tui-img__hidden {
+  opacity: 0;
+}
+
+.tui-img__appear {
+  opacity: 1;
+}

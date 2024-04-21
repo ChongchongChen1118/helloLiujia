@@ -1,0 +1,9 @@
+<view class="tui-org__node">
+  <view class="tui-node__label {{'tui-org__text-'+(node.align || '')}} {{node.active || collapsed?'tui-node__label-active':''}}" bindtap="handleClick">{{ node[fields[0] || 'text'] }}
+    <view class="tui-org__collapsable" wx:if="{{node[fields[1] || 'children'] && node[fields[1] || 'children'].length > 0 && collapsed}}"></view>
+  </view>
+  <view class="tui-node__children" style="display:{{collapsed?'none':'flex'}}" wx:if="{{node[fields[1] || 'children'] && node[fields[1] || 'children'].length > 0}}">
+    <tui-org-node wx:for="{{node[fields[1] || 'children']}}" collapsible="{{collapsible}}" fields="{{fields}}"  wx:key="index" node="{{item}}" bindclick="nodeClick">
+    </tui-org-node>
+  </view>
+</view>

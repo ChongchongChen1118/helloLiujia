@@ -1,0 +1,4 @@
+<view style="height: {{statusBarHeight}};z-index:{{isFixed?zIndex:1}};background: {{background}}"
+  class="tui-status__bar {{isFixed?'tui-status__bar-fixed':''}}">
+  <slot></slot>
+</view>

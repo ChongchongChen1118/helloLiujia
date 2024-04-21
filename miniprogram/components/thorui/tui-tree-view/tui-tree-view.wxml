@@ -1,0 +1,5 @@
+<view class="tui-tree__view">
+  <tui-tree-node wx:for="{{treeData}}" wx:key="index" node="{{item}}" collapsible="{{collapsible}}"
+    triangle="{{triangle}}" bindclick="handleClick">
+  </tui-tree-node>
+</view>

@@ -1,0 +1,7 @@
+<view wx:if="{{type==1 || type==2}}" class="tui-swiper__dot" style="left:{{left}};bottom:{{bottom}}">
+		<view class="tui-dot__item {{type==2?'tui-text__center':''}}" style="width:{{index==current?width:height}};height:{{height}};border-radius:{{radius}};background-color:{{index==current?(activeBgColor || g_activeBgColor):backgroundColor}};margin:{{margin}};color:{{current==index?color:activeColor}};font-size:{{size+'rpx'}}" wx:for="{{count}}" wx:key="index">{{type==2?index+1:''}}</view>
+	</view>
+	<view class="tui-swiper__dot" style="width:{{type==4?width:'100%'}}; right:{{right}};bottom:{{bottom}}" wx:else>
+		<view class="tui-dot__item" style="width:{{width}};height:{{height}};padding:{{padding}};color:{{color}};background-color:{{backgroundColor}};font-size:{{size+'rpx'}}" wx:if="{{type==3}}"><text class="tui-nav__ellipsis">{{currentTitle}}</text></view>
+		<view class="tui-dot__item tui-text__center" style="width:{{width}};height:{{height}};border-radius:{{radius}};background-color:{{backgroundColor}};color:{{color}};font-size:{{size+'rpx'}}" wx:if="{{type==4}}">{{current+1}}/{{count}}</view>
+	</view>

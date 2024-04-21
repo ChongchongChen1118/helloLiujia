@@ -1,0 +1,29 @@
+<view class="tui-checkbox__input {{disabled?'tui-checkbox__disabled':''}}"
+  style="background-color:{{parse.getBackgroundStyle(val,isCheckMark,color)}};border:{{parse.getBorderStyle(val,isCheckMark,color, borderColor)}};zoom:{{scaleRatio}}"
+  catchtap="checkboxChange">
+  <view class="tui-check__mark" style="border-bottom-color:{{checkMarkColor}};border-right-color:{{checkMarkColor}}"
+    wx:if="{{val}}">
+  </view>
+  <checkbox class="tui-checkbox__hidden" color="{{color}}" disabled="{{disabled}}" value="{{value}}" checked="{{val}}">
+  </checkbox>
+</view>
+
+
+<wxs module="parse">
+  module.exports = {
+    getBackgroundStyle: function (val, isCheckMark, color) {
+      var color = val ? color : '#fff'
+      if (isCheckMark) {
+        color = 'transparent'
+      }
+      return color;
+    },
+    getBorderStyle: function (val, isCheckMark, color, borderColor) {
+      var color = val ? color : borderColor;
+      if (isCheckMark) {
+        color = 'transparent'
+      }
+      return '1px solid' + color;
+    }
+  }
+</wxs>

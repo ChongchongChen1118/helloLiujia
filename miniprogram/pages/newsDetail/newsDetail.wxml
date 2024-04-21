@@ -1,0 +1,29 @@
+<view>
+  <tui-skeleton wx:if="{{skeletonShow}}" borderRadius="10rpx"></tui-skeleton>
+  <view class="tui-skeleton">
+  <view class="detail">
+    <view class="title tui-skeleton-rect">{{detail.title}}</view>
+  <view class="info">
+    <view class="left">
+      <text class="tui-skeleton-rect">{{detail.publish_date}}</text>
+      <text class="tui-skeleton-rect">{{detail.author}}</text>
+      <text class="tui-skeleton-rect">{{detail.view_count}}阅读</text>
+    </view>
+    <view class="right">
+      <van-icon name="share-o" size="18" />
+      <text class="tui-skeleton-rect">分享</text>
+      <button open-type="share" class="share tui-skeleton-rect" size="mini">
+        享
+      </button>
+    </view>
+  </view>
+  <view class="content">
+    <rich-text user-select class="tui-skeleton-rect" nodes="{{detail.content}}" />
+  </view>
+  <view class="copyright tui-skeleton-rect">
+    <view class="top">免责声明</view>
+    <view>本文来自网络新闻创作者，不代表你好 · 刘家村小程序端的观点和立场，如有侵权请联系客服进行删除。</view>
+  </view>
+  </view>
+  </view>
+</view>

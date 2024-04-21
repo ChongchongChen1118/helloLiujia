@@ -1,0 +1,29 @@
+.tui-segmented__control {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.tui-segmented__item {
+  display: inline-flex;
+  box-sizing: border-box;
+  transition: all 0.1s linear;
+  position: relative;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-left-width: 0;
+}
+
+.tui-segmented__disabled {
+  opacity: 0.5;
+}
+
+.tui-segmented__first {
+  border-left-width: 1px !important;
+}

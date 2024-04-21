@@ -1,0 +1,25 @@
+.tui-cubic__bezier {
+	position: absolute;
+	opacity: 0;
+	z-index: 20;
+}
+
+.tui-animate__bezier {
+	opacity: 1;
+	z-index: 990;
+	transition: opacity 0.1s, transform cubic-bezier(0, 0, 0, 0) 0.5s;
+}
+
+.tui-animate__bezier_y {
+	opacity: 1;
+	z-index: 990;
+	transition: opacity 0.1s, transform cubic-bezier(0.3, -0.2, 1, 0) 0.5s;
+}
+
+.tui-badge__bezier {
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 26rpx;
+}

@@ -1,0 +1,57 @@
+.tui-scale__box {
+  position: relative;
+}
+
+.tui-scroll__view {
+  display: flex;
+}
+
+.tui-tickmarks__box {
+  display: flex;
+  border-left: 1px solid;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tui-scale__flex {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.tui-tick__marks {
+  border-right: 1px solid;
+  box-sizing: border-box;
+}
+
+.tui-scale__num {
+  text-align: center;
+  flex-shrink: 0;
+  transform: translate(-50%);
+  padding-left: 1px;
+  box-sizing: border-box;
+}
+
+.tui-seat__box {
+  flex-shrink: 0;
+}
+
+.tui-scale__pointer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 0;
+  z-index: 10;
+}
+
+.tui-scale__triangle {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  vertical-align: top;
+}

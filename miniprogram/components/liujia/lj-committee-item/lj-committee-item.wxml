@@ -1,0 +1,14 @@
+<view class="nsitem">
+  <view class="pic">
+    <image class="img" src="{{committee.picurl}}" mode="aspectFill" />
+  </view>
+  <view class="text">
+    <view class="title">
+      姓名：{{committee.name}}
+    </view>
+    <view class="title">
+      职务：{{committee.duties}}
+    </view>
+    <tui-text highlight	 format class="title" textType="mobile" call color="#5677FC" text="{{committee.phone}}"></tui-text>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tui-tree-node": "../tui-tree-node/tui-tree-node"
+  }
+}

@@ -1,0 +1,4 @@
+.tui-table__box {
+	font-size: 0;
+	box-sizing: border-box;
+}

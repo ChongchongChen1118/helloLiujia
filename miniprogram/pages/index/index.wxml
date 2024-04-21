@@ -1,0 +1,89 @@
+<!--轮播图-->
+<tui-notice-bar is-left scrollable color="#f54f46" content="{{content}}" isFixed>
+  <view class="tui-padding" slot="left">
+    <tui-icon name="news-fill" size="{{48}}" unit="rpx" color="#f54f46"></tui-icon>
+  </view>
+</tui-notice-bar>
+<view class="banner">
+  <swiper class="swiper" previous-margin="30rpx" circular autoplay interval="3000" indicator-dots indicator-active-color="#808080" indicator-color="rgba(255,255,255,0.3)">
+    <swiper-item>
+      <image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/liujiaphoto/0M8A7497.JPG" mode="" />
+    </swiper-item>
+    <swiper-item>
+      <image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/liujiaphoto/航拍20201103.jpg" mode="" />
+    </swiper-item>
+    <swiper-item>
+      <image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/liujiaphoto/DJI_0654.JPG" mode="" />
+    </swiper-item>
+    <swiper-item>
+      <image src="https://mp-d4bf0096-2db6-4061-9c32-da817c708bcf.cdn.bspapp.com/liujiaphoto/0M8A7650.JPG" mode="" />
+    </swiper-item>
+  </swiper>
+</view>
+<!--滑动栏-->
+<view class="scrollNav">
+  <scroll-view scroll-x enhanced  show-scrollbar="{{flase}}">
+    <navigator url="{{item.url1}}" class="item" wx:for="{{navArr}}" wx:key="index" open-type="{{item.type}}">
+      <view class="pic">
+        <image src="{{item.icon}}" mode="" />
+      </view>
+      <view class="text">
+        {{item.classname}}
+      </view>
+    </navigator>
+  </scroll-view>
+</view>
+<!--村信息卡片-->
+<view class="xinxi">
+  <tui-row marginBottom="10px" gutter="{{gutter}}">
+    <tui-col span="{{8}}">
+      <view class="tui-col__demo tui-yellow">
+        <tui-text padding="0 0 24rpx" block text="896" size="48" fontWeight="600" align="center" color="#F54F5C"></tui-text>
+        <tui-text block text="村民数" align="center"></tui-text>
+      </view>
+    </tui-col>
+    <tui-col span="{{8}}">
+      <view class="tui-col__demo tui-gray">
+        <tui-text padding="0 0 24rpx" block text="XXX" size="48" fontWeight="600" align="center" color="#F54F5C"></tui-text>
+        <tui-text block text="党员数" align="center"></tui-text>
+      </view>
+    </tui-col>
+    <tui-col span="{{8}}">
+      <view class="tui-col__demo tui-yellow">
+        <tui-text padding="0 0 24rpx" block text="张立翩" size="48" fontWeight="600" align="center" color="#F54F5C"></tui-text>
+        <tui-text block text="党支部书记" align="center"></tui-text>
+      </view>
+    </tui-col>
+  </tui-row>
+</view>
+
+<!--刘家村介绍-->
+<view class="about">
+  <view class="pubTitle">
+    <view class="en">LIU JIA CUN</view>
+    <view class="cn">刘家村简介</view>
+    <view class="line"></view>
+  </view>
+  <view class="content">
+    <view class="row">{{jieshao[0]}}</view>
+    <view class="row">{{jieshao[1]}}</view>
+    <view class="row">{{jieshao[2]}}</view>
+    <view class="row">{{jieshao[3]}}</view>
+  </view>
+</view>
+
+<!--刘家热点新闻-->
+<view class="news">
+<view class="pubTitle">
+    <view class="en">News</view>
+    <view class="cn">热点新闻</view>
+    <view class="line"></view>
+  </view>
+  <view class="content">
+    <view class="box" wx:for="{{news}}" wx:key="id">
+      <lj-news-item news="{{item}}"></lj-news-item>
+    </view>
+  </view>
+</view>
+<!--页脚-->
+<tui-footer fixed="{{false}}" copyright="Copyright © XXXX-2023 红旗 刘家村." navigate="{{navigate}}"></tui-footer>

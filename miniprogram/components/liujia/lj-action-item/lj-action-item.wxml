@@ -1,0 +1,30 @@
+<!--活动框-->
+
+<view class="xinxi">
+  <navigator url="../../pages/actionDetail/actionDetail?id={{action._id}}">
+
+  <tui-row marginBottom="10px" gutter="{{gutter}}">
+  <tui-col span="{{24}}">
+	<view class="tui-col__demo tui-yellow">
+  <image class="img1" src="{{action.img}}" mode="aspectFill"/>
+  </view>
+  </tui-col>
+</tui-row>
+
+
+  <tui-row marginBottom="10px" gutter="{{gutter}}">
+    <tui-col span="{{12}}">
+      <view class="tui-col__demo tui-yellow">
+        <tui-text padding="0 0 24rpx" block text="{{action.name}}" size="48" fontWeight="600" align="center" color="#F54F5C"></tui-text>
+        <tui-text block text="活动简称" align="center"></tui-text>
+      </view>
+    </tui-col>
+    <tui-col span="{{12}}">
+      <view class="tui-col__demo tui-gray">
+        <tui-text padding="0 0 24rpx" block text="{{action.num}}" size="48" fontWeight="600" align="center" color="#F54F5C"></tui-text>
+        <tui-text block text="参与人数" align="center"></tui-text>
+      </view>
+    </tui-col>
+  </tui-row>
+</navigator>
+</view>

@@ -1,0 +1,15 @@
+<wxs module="parse">
+  module.exports={
+    getPadding:function(gap){
+       var styles = '';
+			 var padding = parseInt(gap)
+			 if (padding && padding > 0) {
+          styles = 'padding:0 '+padding+'rpx;'
+				}
+				return styles
+    }
+  }
+</wxs>
+<view class="tui-wing__blank  {{radius?'tui-wingblank__hidden':''}} {{parse.getPadding(gap)?'':'tui-wingblank__' + size}}" style="background:{{background}};border-radius:{{radius}}rpx;margin-top:{{marginTop}}rpx;margin-bottom:{{marginBottom}}rpx;{{parse.getPadding(gap)}}" bindtap="handleClick">
+		<slot></slot>
+	</view>

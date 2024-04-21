@@ -1,0 +1,35 @@
+<view class="tui-text__wrap {{block?'tui-text__block':'tui-text__inline'}} {{'tui-text__'+align}} {{highlight && !disable?'tui-text__active':''}} {{unShrink?'tui-flex__shrink':''}}"
+		style="text-align:{{align}};padding:{{padding}}" bindtap="handleClick">
+		<slot></slot>
+		<text class="tui-text__content"
+			style="color:{{text_color}};font-size:{{(size || g_size)+(unit || g_unit)}};line-height:{{lineHeight?size+unit:'auto'}};text-align:{{align}};text-decoration:{{decoration}};font-weight:{{fontWeight}}"
+			selectable="{{selectable}}" userSelect="{{userSelect}}"
+			decode="{{decode}}">{{parse.getText(text, textType, format)}}</text>
+		<slot name="right"></slot>
+  </view>
+
+  <wxs module="parse">
+  function getFormatPhoneNo(num){
+    var reg = getRegExp('(\d{3})\d{4}(\d{4})$')
+    return num.length === 11 ? num.replace(reg, '$1****$2') : num;
+  }
+  function getFormatMoney(money){
+    var reg = getRegExp("(\d{3})","g")
+    var reg2=getRegExp("\,$")
+    return parseFloat(money).toFixed(2).toString().split('').reverse().join('').replace(reg, '$1,')
+					.replace(reg2, '').split('').reverse().join('');
+  }
+  module.exports={
+      getText:function(text, textType, format){
+        var _text = text
+				if (format) {
+					if (textType === 'mobile') {
+						_text = getFormatPhoneNo(text)
+					} else if (textType === 'amount') {
+						_text = getFormatMoney(text)
+					}
+				}
+				return _text
+      }
+  }
+  </wxs>

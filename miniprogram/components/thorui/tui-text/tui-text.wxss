@@ -1,0 +1,27 @@
+.tui-text__wrap {
+  align-items: center;
+  flex-direction: row;
+}
+
+.tui-text__active:active {
+  opacity: .5;
+}
+
+.tui-text__inline {
+  display: inline-flex;
+}
+
+.tui-text__block {
+  display: flex;
+}
+.tui-flex__shrink{
+  flex-shrink: 0;
+}
+
+.tui-text__center {
+  justify-content: center;
+}
+
+.tui-text__right {
+  justify-content: flex-end;
+}

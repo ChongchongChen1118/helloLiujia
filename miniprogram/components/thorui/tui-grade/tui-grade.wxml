@@ -1,0 +1,5 @@
+<view class="tui-grade__box" bindtouchmove="touchMove">
+		<block wx:for="{{quantity}}" wx:key="index">
+			<view	class="tui-icon__grade {{'tui-icon__star' + (index < intScore ? 'full' : '') + (decimalScore > 0 && index == intScore ? 'half' : '')}}"	bindtap="touchMove"	style="width:{{width < size ? size : width}}px;font-size:{{size}}px;color: {{index < intScore || (decimalScore > 0 && index == intScore) ? (active || g_active) : normal}}"></view>
+		</block>
+	</view>

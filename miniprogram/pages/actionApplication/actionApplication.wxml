@@ -1,0 +1,16 @@
+<view class="container">
+<view class="tui-page__bd">
+  <tui-form id="form">
+    <tui-input required label="姓名" lineLeft="{{false}}" placeholder="请输入姓名" model:value="{{name}}"></tui-input>
+    <tui-input type="number" required label="手机号" lineLeft="{{false}}" placeholder="请输入手机号" model:value="{{phone}}"></tui-input>
+    <tui-input type="number" required label="第二联系人" lineLeft="{{false}}" placeholder="请输入第二联系人手机号" model:value="{{sephone}}">
+    </tui-input>
+    <tui-input type="idcard" required label="身份证" lineLeft="{{false}}" placeholder="请输入身份证号码" model:value="{{idCard}}"></tui-input>
+    <tui-input required bind:tap="clickZhuzhi" disabled label="家庭住址" lineLeft="{{false}}" placeholder="请选择家庭住址" model:value="{{home}}"></tui-input>
+    <view class="tui-btn__box">
+      <tui-button margin="auto" width="400rpx" height="84rpx" bold bindclick="submit">提交</tui-button>
+    </view>
+  </tui-form>
+</view>
+</view>
+<tui-picker show="{{show__1}}" pickerData="{{items__1}}" bindhide="hide" bindchange="change"></tui-picker>

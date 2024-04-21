@@ -1,0 +1,39 @@
+.tui-timer__box {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tui-timer__item,
+.tui-timer__colon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6rpx;
+}
+
+.tui-timer__ms {
+	overflow: hidden;
+	border-radius: 6rpx;
+}
+
+/*ms使用css3代替js频繁更新操作，性能优化*/
+.tui-ms__list {
+	animation: loop 1s steps(10) infinite;
+}
+
+@keyframes loop {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(-100%);
+	}
+}
+
+.tui-ms__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

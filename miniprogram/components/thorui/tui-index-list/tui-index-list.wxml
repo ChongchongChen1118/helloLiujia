@@ -1,0 +1,35 @@
+<view class="tui-index-list">
+		<scroll-view class="tui-scroll__view" style="height:calc(100vh - {{top + bottom + unit}})" scroll-y scroll-top="{{scrollTop}}" bindscroll="scroll">
+			<slot name="header"></slot>
+			<view class="tui-content__box">
+				<view class="tui-item__select" wx:for="{{listData}}" wx:key="index">
+					<view wx:if="{{index == listItemCur}}" class="tui-content__title {{topLine?'tui-line__top':''}} {{bottomLine?'tui-line__bottom':''}}">
+						<view class="tui-title__item" style="background:{{background_cur}}; color:{{color_cur}};font-size:{{size}};height:{{height}};padding:{{padding}}">{{ item.letter }}</view>
+					</view>
+					<view wx:elif="{{index == listItemCur + 1}}" class="tui-content__title {{topLine?'tui-line__top':''}} {{bottomLine?'tui-line__bottom':''}}">
+						<view class="tui-title__item" style="background:{{background_next}};color:{{color_next}};font-size:{{size}};height:{{height}};padding:{{padding}}">{{ item.letter }}</view>
+					</view>
+					<view wx:else class="tui-content__title {{topLine?'tui-line__top':''}} {{bottomLine?'tui-line__bottom':''}}">
+						<view class="tui-title__item" style="background:{{background}};color:{{color}};font-size:{{size}};height:{{height}};padding:{{padding}}">{{ item.letter }}</view>
+					</view>
+					<view class="tui-content__item" wx:for-items="{{item.data}}" wx:for-item="model" wx:for-index="subIndex" wx:key="subIndex" data-index="{{index}}" data-subi="{{subIndex}}" bindtap="itemClick">
+            <item index="{{index}}" entity="{{model}}" subi="{{subIndex}}"></item>
+					</view>
+				</view>
+			</view>
+			<slot name="footer"></slot>
+			<view class="tui-index__indicator {{touching && indicatorTop != -1 ? 'tui-indicator__show' : ''}} {{treeKeyTran ? 'tui-indicator__tran' : ''}}" 
+style="top:{{indicatorTop + 'px'}}">
+				{{ listData[treeItemCur] && listData[treeItemCur].letter }}
+			</view>
+			<view id="tui_index__letter" class="tui-index__letter" catchtouchstart="touchStart" catchtouchmove="touchMove"
+			 catchtouchend="touchEnd" catchtouchcancel="touchEnd">
+				<view class="tui-letter__item {{index === treeItemCur ? 'tui-letter__cur' : ''}}" wx:for="{{listData}}"
+				 wx:key="index">
+					<view class="tui-letter__key" style="background: {{index === treeItemCur ? (activeKeyBackground || g_activeKeyBackground) : ''}};color:{{index === treeItemCur ? activeKeyColor : keyColor}}">
+						{{ item.letter }}
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>

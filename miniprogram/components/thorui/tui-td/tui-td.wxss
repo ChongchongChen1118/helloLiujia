@@ -1,0 +1,50 @@
+/*栅格 24*/
+.tui-table__column {
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+	word-break: break-all;
+}
+
+.tui-td__shrink {
+	flex-shrink: 0;
+}
+
+.tui-flex-grow {
+	flex-grow: 1;
+}
+
+.tui-table__middle {
+	display: inline-flex;
+	align-items: center;
+}
+
+.tui-table__center {
+	justify-content: center;
+}
+
+.tui-table__right {
+	justify-content: flex-end;
+}
+
+.tui-text__center {
+	text-align: center;
+}
+
+.tui-text__right {
+	text-align: right;
+}
+
+.tui-column__ellipsis {
+	overflow: hidden;
+	white-space: nowrap !important;
+	text-overflow: ellipsis;
+}
+
+.tui-td__upper {
+	z-index: 10;
+}
+
+.tui-td__hidden {
+	visibility: hidden;
+}

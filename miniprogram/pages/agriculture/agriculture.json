@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "lj-agriculture-item":"../../components/liujia/lj-agriculture-item/lj-agriculture-item"
+  },
+  "navigationBarTitleText": "农业技术指导新闻"
+}

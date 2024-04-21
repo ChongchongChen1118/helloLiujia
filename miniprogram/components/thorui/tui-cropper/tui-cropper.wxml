@@ -1,0 +1,13 @@
+<wxs src="./tui-cropper.wxs" module="parse"></wxs>
+<view class="tui-cropper__box" catchtouchmove="stop">
+		<image	bindload="imageLoad"	binderror="imageLoad"	bindtouchstart="{{parse.touchstart}}" bindtouchmove="{{parse.touchmove}}" bindtouchend="{{parse.touchend}}"	data-minScale="{{minScale}}"	data-maxScale="{{maxScale}}" style="width: {{imgWidth ? imgWidth : width}}px;height: {{imgHeight ? imgHeight + 'px' : 'auto'}};transition-duration:{{animation ? 0.3 : 0}}s"	class="tui-cropper__image" src="{{imageUrl}}"	wx:if="{{imageUrl}}" mode="widthFix"></image>
+		<view class="tui-backdrop__cropper" style="width:{{width}}px;height:{{height}}px;border-radius:{{isRound ? '50%' : '0'}}">
+			<view	class="tui-cropper__border"	change:prop="{{parse.propsChange}}"	prop="{{props}}" data-width="{{width}}"	data-height="{{height}}" data-windowHeight="{{sysInfo.windowHeight || 600}}"	data-windowWidth="{{sysInfo.windowWidth || 400}}"	data-imgTop="{{imgTop}}"	data-imgLeft="{{imgLeft}}"	data-imgWidth="{{imgWidth}}"	data-imgHeight="{{imgHeight}}"	data-angle="{{angle}}"	style="border-radius: {{isRound ? '50%' : '0'}};border: {{border}}"></view>
+		</view>
+		<canvas	canvas-id="tui-image__cropper" id="tui-image__cropper" disable-scroll="{{true}}"	style="width: {{width * scaleRatio}}px; height: {{height * scaleRatio}}px" class="tui-cropper__canvas"></canvas>
+		<view class="tui-cropper__tabbar" wx:if="{{!custom}}">
+			<view class="tui-op__btn" catchtap="back">取消</view>
+			<image src="{{rotateImg}}" class="tui-rotate__img" bindtap="setAngle"></image>
+			<view class="tui-op__btn" catchtap="getImage">完成</view>
+		</view>
+	</view>

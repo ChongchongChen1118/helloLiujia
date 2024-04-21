@@ -1,0 +1,24 @@
+<navigator url="../../pages/newsDetail/newsDetail?id={{news.id}}" class="nsitem">
+  <view class="pic">
+    <image class="img" src="{{news.picurl}}" mode="aspectFill" />
+  </view>
+  <view class="text">
+    <view class="title">
+      {{news.title}}
+    </view>
+    <view class="info">
+      <view class="block">
+        <tui-icon name="clock" size="14" ></tui-icon>
+        <text>{{news.publish_date}}</text>
+      </view>
+      <view class="block">
+        <tui-icon name="pie" size="14" ></tui-icon>
+        <text>{{news.view_count}}</text>
+      </view>
+      <view class="block">
+        <tui-icon name="people" size="14" ></tui-icon>
+        <text>{{news.author}}</text>
+      </view>
+    </view>
+  </view>
+</navigator>

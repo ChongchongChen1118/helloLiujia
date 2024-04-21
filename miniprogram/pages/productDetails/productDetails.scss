@@ -1,0 +1,46 @@
+.banner{
+  padding-top:25rpx;
+  .swiper{
+    height: 460rpx;
+    swiper-item{
+      image{
+        width: 690rpx;
+        height: 460rpx;
+      }
+    }
+  }
+}
+
+
+.textMain {
+  padding: 45rpx 30rpx;
+}
+
+.textMain .title {
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 50rpx;
+  font-size: 50rpx;
+  color: #333;
+}
+
+.textMain .text {
+  border-top: 1px solid #dedede;
+  margin-top: 50rpx;
+  padding-top: 60rpx;
+}
+
+.textMain .row {
+  display: flex;
+  padding-bottom: 30rpx;
+}
+
+.textMain .row .left {
+  font-size: 34rpx;
+  color: #888
+}
+
+.textMain .row .right {
+  font-size: 38rpx;
+  color: #666;
+  padding-left: 30rpx;
+}

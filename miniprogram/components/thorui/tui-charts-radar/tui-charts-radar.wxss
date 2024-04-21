@@ -1,0 +1,132 @@
+.tui-charts__radar-box {
+  position: relative;
+}
+
+.tui-charts-radar {
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(0deg);
+}
+
+.tui-radar__mrgin {
+  margin-top: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.tui-radar__radius {
+  /* width: 1px; */
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  transform-origin: 50% 100%;
+}
+
+.tui-radar__name {
+  min-width: 120rpx;
+  font-size: 24rpx;
+  position: absolute;
+  top: -20rpx;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+}
+
+.tui-radar__center {
+  position: absolute;
+  /* width: 1px;
+  height: 1px; */
+  left: 50%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.tui-radar__hypotenuse,
+.tui-radar__dataset {
+  /* height: 1px; */
+  position: absolute;
+  transform-origin: 0 50%;
+  z-index: 2;
+}
+
+.tui-radar__dataset {
+  z-index: 3;
+}
+
+.tui-radar__dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  transform: translate(-50%, -50%) rotate(0);
+}
+
+.tui-radar__legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 24rpx;
+}
+
+.tui-radar__legend-item {
+  display: flex;
+  align-items: center;
+  margin-left: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.tui-legend__circle {
+  height: 20rpx;
+  width: 20rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+  flex-shrink: 0;
+}
+
+.tui-radar__tooltip {
+  padding: 30rpx;
+  border-radius: 12rpx;
+  background-color: rgba(0, 0, 0, .6);
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.tui-tooltip__title {
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 30rpx;
+}
+
+.tui-radar__tooltip-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.tui-radar__tooltip-item {
+  display: flex;
+  align-items: center;
+  padding-top: 24rpx;
+  white-space: nowrap;
+}
+
+.tui-tooltip__val {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #fff;
+  margin-left: 6rpx;
+}
+
+.tui-tooltip__val-ml {
+  margin-left: 20rpx;
+}

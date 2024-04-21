@@ -1,0 +1,9 @@
+<view class="pubTitle" style="margin-bottom: -50rpx; margin-top: 30rpx;">
+    <view class="en">ATTRACTIONS</view>
+    <view class="cn">游玩景点</view>
+    <view class="line"></view>
+  </view>
+<block wx:for="{{play}}" wx:key="index">
+<lj-play-item play="{{item}}"></lj-play-item>
+</block>
+<tui-nomore text="我是有底线的" backgroundColor="#FFFFFF"></tui-nomore>

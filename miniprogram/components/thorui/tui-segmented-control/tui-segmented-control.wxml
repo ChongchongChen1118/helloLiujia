@@ -1,0 +1,7 @@
+<view class="tui-segmented__control {{disabled?'tui-segmented__disabled':''}}">
+  <view class="tui-segmented__item {{index===0?'tui-segmented__first':''}}" wx:for="{{values}}" wx:key="index"
+    style="border-top-left-radius:{{index===0?radius:'0'}};border-bottom-left-radius:{{index===0?radius:'0'}};border-top-right-radius:{{index===values.length - 1?radius:'0'}};border-bottom-right-radius:{{index===values.length - 1?radius:'0'}};border-color:{{activeColor}};background-color:{{currentIndex===index?activeColor:'transparent'}};height:{{height}}"
+    bindtap="handleClick" data-index="{{index}}">
+    <text style="font-size:{{size}};color:{{currentIndex===index?'#fff':activeColor}}">{{item}}</text>
+  </view>
+</view>

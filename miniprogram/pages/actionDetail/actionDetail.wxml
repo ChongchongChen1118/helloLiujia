@@ -1,0 +1,19 @@
+<view>
+  <tui-skeleton wx:if="{{skeletonShow}}"borderRadius="10rpx"></tui-skeleton>
+  <view class="tui-skeleton">
+  <view class="detail">
+    <view class="title tui-skeleton-rect">{{detail.title}}</view>
+  <view class="info">
+    <view class="left">
+      <text class="tui-skeleton-rect">{{detail.publish_date}}</text>
+      <text class="tui-skeleton-rect">{{detail.author}}</text>
+      <text class="tui-skeleton-rect">活动通知</text>
+    </view>
+  </view>
+  <view class="content">
+    <rich-text user-select class="tui-skeleton-rect" nodes="{{detail.content}}" />
+  </view>
+  </view>
+  </view>
+</view>
+<tui-button shadow bind:tap="getaction" size="45" width="350rpx" shape="circle" margin="50rpx auto">参与活动</tui-button>

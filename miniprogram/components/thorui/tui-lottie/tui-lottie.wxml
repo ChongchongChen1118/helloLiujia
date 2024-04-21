@@ -1,0 +1,1 @@
+	<canvas style="width:{{mpW}}px;height:{{mpH}}px" class="lottie_canvas"  canvas-id="lottie_canvas" type="2d"></canvas>

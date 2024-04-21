@@ -1,0 +1,24 @@
+<wxs src="./tui-slide-verify.wxs" module="parse"></wxs>
+<view class="tui-slide-vcode" style="width: {{slideBarWidth + 'px'}}; height:{{slideBlockWidth + 'px'}}; background-color:{{backgroundColor}}">
+		<text class="tui-text-flashover" style="font-size: {{size + 'rpx'}}; background: -webkit-gradient(linear, left top, right top, color-stop(0,{{color}}), color-stop(.4, {{color}}), color-stop(.5, white), color-stop(.6, {{color}}), color-stop(1, {{color}}))">拖动滑块验证</text>
+    <view class="tui-slide-glided" style="background-color:{{activeBgColor || g_success}}">
+			<text style="font-size:{{size + 'rpx'}}; color:{{activeColor}}" wx:if="{{isPass}}">{{ passText }}</text>
+			<view wx:if="{{!isPass}}" style="width: {{slideBarWidth + 'px'}};height: {{slideBlockWidth + 'px'}}; font-size:{{size + 'rpx'}}" class="tui-active__text">拖动滑块验证</view>
+		</view>
+		<view
+			class="tui-slider-block"
+			style="width: {{slideBlockWidth + 'px'}}; height: {{slideBlockWidth + 'px'}}; border-color:{{isPass ? (activeBorderColor || g_success) : borderColor}}"
+			change:prop="{{parse.slidereset}}"
+			prop="{{reset}}"
+			data-slideBarWidth="{{slideBarWidth}}"
+			data-slideBlockWidth="{{slideBlockWidth}}"
+			data-errorRange="{{errorRange}}"
+			data-disabled="{{disabled}}"
+			bind:touchstart="{{parse.touchstart}}"
+			bind:touchmove="{{parse.touchmove}}"
+			bind:touchend="{{parse.touchend}}"
+		>
+			<text class="tui-slide-icon tui-icon-double_arrow" style="font-size: {{iconSize + 'rpx'}}; color: {{arrowColor}}" wx:if="{{!isPass}}"></text>
+			<text class="tui-slide-icon tui-icon-check_mark" style="font-size: {{iconSize + 'rpx'}}; color: {{checkColor || g_success}}" wx:else></text>
+		</view>
+	</view>

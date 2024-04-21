@@ -1,0 +1,21 @@
+<view class="tui-tree__node">
+  <view class="tui-tree__label" bindtap="handleClick">
+    <view class="tui-treeview__triangle {{!collapsed?'tui-triangle__90deg':''}}"
+      wx:if="{{node.children && node.children.length > 0 && triangle}}"></view>
+    <block wx:if="{{node.src}}">
+      <image class="tui-tree__icon" mode="widthFix" src="{{node.src}}" hidden="{{!collapsed}}">
+      </image>
+    </block>
+    <block wx:if="{{node.activeSrc}}">
+      <image class="tui-tree__icon" mode="widthFix" src="{{node.activeSrc}}" hidden="{{collapsed}}">
+      </image>
+    </block>
+    <text>{{ node.text }}</text>
+  </view>
+  <block wx:if="{{node.children && node.children.length > 0}}">
+    <view class="tui-tree__children" hidden="{{collapsed}}">
+      <tui-tree-node wx:for="{{node.children}}" wx:key="index" node="{{item}}" collapsible="{{collapsible}}"
+        triangle="{{triangle}}" bindclick="nodeClick"></tui-tree-node>
+    </view>
+  </block>
+</view>

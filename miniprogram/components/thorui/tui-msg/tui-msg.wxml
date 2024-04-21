@@ -1,0 +1,9 @@
+<view class="tui-msg__box">
+		<view class="tui-msg__icon">
+			<icon color="{{color || g_color}}" type="{{type}}" size="{{size}}" wx:if="{{type && !src}}"></icon>
+			<image class="thorui-msg__img" style="width: {{width}}; height: {{height}}" src="{{src}}" mode="aspectFit" wx:if="{{src}}" />
+		</view>
+		<view class="tui-msg__title" wx:if="{{title}}">{{ title }}</view>
+		<view class="tui-msg__desc" wx:if="{{desc}}">{{ desc }}</view>
+		<slot></slot>
+	</view>

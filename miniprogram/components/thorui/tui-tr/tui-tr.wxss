@@ -1,0 +1,14 @@
+.tui-table__row {
+	width: 100%;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.tui-flex-wrap {
+	flex-wrap: wrap;
+}
+
+.tui-table__fixed {
+	position: fixed;
+	z-index: 99;
+}

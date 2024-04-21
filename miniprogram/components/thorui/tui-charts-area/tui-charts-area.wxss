@@ -1,0 +1,241 @@
+.tui-charts__line-wrap {
+  position: relative;
+  transform: rotate(0deg) scale(1);
+  /* margin: 0 auto; */
+}
+
+.tui-line__legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tui-line__legend-item {
+  display: flex;
+  align-items: center;
+  margin-left: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.tui-line__legend-circle {
+  height: 20rpx;
+  width: 20rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+  flex-shrink: 0;
+}
+
+.tui-charts__line-box {
+  position: relative;
+  padding-left: 1px;
+  box-sizing: border-box;
+  transform-origin: 0 0;
+  overflow: visible;
+  transform: scale(1);
+}
+
+.tui-line__scroll-view {
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.tui-charts__line {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  /* overflow: hidden; */
+  transform: rotate(0deg) scale(1);
+}
+
+.tui-line__between {
+  justify-content: space-between;
+}
+
+.tui-line__item {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 10;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.tui-line__flex-1 {
+  flex: 1;
+}
+
+.tui-xAxis__tickmarks {
+  position: absolute;
+  right: 0;
+  width: 1px;
+  transform: translateY(100%);
+  bottom: 0;
+}
+
+.tui-yAxis__split-line {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-right-width: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.tui-yAxis__area-line {
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.tui-line__xAxis-text {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  flex: 1;
+  transform: translate(-50%, 100%);
+  padding-top: 8rpx;
+  word-break: break-all;
+}
+
+.tui-line__border-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  z-index: 11;
+}
+
+.tui-xAxis__line {
+  width: 100%;
+  height: 0;
+  border-top-width: 1px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+
+}
+
+.tui-line__first {
+  z-index: 12;
+}
+
+.tui-yAxis__val {
+  transform: translateX(-100%);
+  padding-right: 12rpx;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tui-charts__line-dot {
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.3s;
+  z-index: 12;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.tui-line__val {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding-bottom: 12rpx;
+  transform: translate(-50%, -100%);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  white-space: nowrap;
+  z-index: 20;
+}
+
+.tui-charts__dot-enlarge {
+  transform: scale(1.4);
+}
+
+.tui-charts__broken-line {
+  position: absolute;
+  transform-origin: 0 0;
+  transition: all 0.3s;
+  z-index: 10;
+  border-color: transparent;
+  box-sizing: border-box;
+  /* transform: translateZ(0); */
+  /* -webkit-backface-visibility:hidden; */
+}
+
+.tui-line__tooltip {
+  padding: 30rpx;
+  border-radius: 12rpx;
+  background-color: rgba(0, 0, 0, .6);
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.tui-line__tooltip-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tui-tooltip__title {
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 30rpx;
+}
+
+.tui-line__tooltip-item {
+  display: flex;
+  align-items: center;
+  padding-top: 24rpx;
+  white-space: nowrap;
+}
+
+.tui-tooltip__val {
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #fff;
+  margin-left: 6rpx;
+}
+
+.tui-tooltip__val-ml {
+  margin-left: 20rpx;
+}
+
+.tui-area__chart-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: rotate(0deg) scale(1);
+}
+
+.tui-area__item {
+  flex: 1;
+  flex-shrink: 0;
+  /* 120%:100%，-20%:0% ，改为px时恢复*/
+  clip-path: polygon(0% calc(100% * (1 - var(--tui-area-start))),
+      100% calc(100% * (1 - var(--tui-area-end))),
+      120% 100%,
+      -20% 100%);
+}

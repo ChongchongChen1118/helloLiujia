@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tui-dropdown-list": "../../components/thorui/tui-dropdown-list/tui-dropdown-list",
+    "tui-sticky": "../../components/thorui/tui-sticky/tui-sticky"
+  },
+  "navigationBarTitleText": "购物" 
+}

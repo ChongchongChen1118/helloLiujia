@@ -1,0 +1,6 @@
+<view class="tui-data-checkbox" style="margin-bottom:-{{gap}}rpx">
+    <view class="tui-data__cb-item {{item.disable?'tui-data__cb-disabled':''}}" style="width:{{width?width+'rpx':'auto'}};padding:{{padding}};border-radius:{{radius}};margin-right:{{gap}}rpx;margin-bottom:{{gap}}rpx;background:{{item.checked?activeBgColor:background}};border-color:{{item.checked?(borderColor || g_borderColor):(defaultBorderColor || background)}}" wx:for="{{itemList}}" wx:key="index" catchtap="itemTap" data-index="{{index}}">
+			<text class="tui-cb__text"
+				style="font-size:{{size}}rpx;line-height: {{size}}rpx;color:{{item.checked?(activeColor || g_activeColor):color}}">{{item.text}}</text>
+		</view>
+	</view>

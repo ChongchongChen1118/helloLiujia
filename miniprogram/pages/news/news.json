@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tui-tab": "../../components/thorui/tui-tab/tui-tab"
+  },
+  "navigationBarTitleText": "刘家村新闻"
+}
